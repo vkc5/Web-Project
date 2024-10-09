@@ -4,4 +4,122 @@ body {
     background-position: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #fff;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height:47px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    font-size:0.8em;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+}
+
+.edu {
+    font-size: 1em;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin:0 30px;
+    position: relative;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none; 
+    font-size: 1em;
+    padding: 10px;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+}
+/*.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+*/
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.icons a:hover {
+    color: #ccc;
+}
+.icons img{
+    height:30px;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: none;
 }
