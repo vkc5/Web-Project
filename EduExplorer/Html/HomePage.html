@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../CSS/HomePage.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduExplorer</title>
+</head>
+
+<body>
+    <script>
+        // Array of image URLs
+        const images = [
+            '../image/HomepageImages/HomepagePhoto1.jpg',
+            '../image/HomepageImages/HomepagePhoto2.jpg',
+            '../image/HomepageImages/HomepagePhoto3.jpg'
+        ];
+
+        // Function to set a random background image
+        function setRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.body.style.backgroundImage = `url('${images[randomIndex]}')`;
+        }
+
+        // Call the function when the page loads
+        window.onload = setRandomBackground;
+    </script>
+</body>
+
+</html>
