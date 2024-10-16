@@ -33,14 +33,14 @@ function changeBackgroundImage() {
     }
 
     setBackgroundImage(currentIndex); 
-    let interval = setInterval(setBackgroundAutomatically, 7000); // Change background every 7 seconds
+    let interval = setInterval(setBackgroundAutomatically, 6000); // Change background every 6 seconds
 
     document.querySelectorAll('.dot').forEach((dot, index) => {
         dot.style.cursor = 'pointer'; 
         dot.addEventListener('click', () => {
             clearInterval(interval); 
             setBackgroundImage(index); 
-            interval = setInterval(setBackgroundAutomatically, 7000); 
+            interval = setInterval(setBackgroundAutomatically, 6000); 
         });
     });
 }
