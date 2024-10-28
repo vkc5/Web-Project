@@ -1,5 +1,5 @@
 body {
-    background-color: #d2c9c9af;
+    background-color: #f1e9d79f;
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
@@ -17,6 +17,9 @@ body {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
+
 
 }
 
