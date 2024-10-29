@@ -34,9 +34,7 @@
              -->
         </ul>
         <div class="icons">
-            
-            <a href=""><i><img src="../image/HomepageImages/user-interface.png" alt="user-interface"></i></a>
-
+            <a href="#" id="showRegistration"><i><img src="../image/HomepageImages/user-interface.png" alt="user-interface"></i></a>
         </div>
     </nav>
     <div class="hero-section">
@@ -57,6 +55,19 @@
         <button class="dot"></button>
         <button class="dot"></button>
     </div>
+    
+    <div id="registrationForm" style="display: none;">
+        <form>
+            <h1>Enter your details!</h1>
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="phoneNumber" placeholder="Phone number">
+            <button type="submit" id="submitButton">Register</button>
+            <div id="message"></div>
+        </form>
+    </div>
+
 </body>
 
 </html>
