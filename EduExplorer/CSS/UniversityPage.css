@@ -130,12 +130,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     z-index: 1000; /* Make sure it's on top of other elements */
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .popup-modal.show {
@@ -147,7 +147,7 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 800px;
+    width: 850px;
     max-width: 90%;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     position: relative;
@@ -164,6 +164,20 @@ body {
     to {
         transform: translateY(0);
     }
+}
+
+@keyframes slide-out-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.popup-modal.move-left {
+    transform: translateX(-20%); /* Moves the card 50% to the left */
+    transition: transform 0.5s ease;
 }
 
 .close {
@@ -259,6 +273,81 @@ body {
 .read-more:hover {
     background-color: #333;
 }
+
+.rating-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 80px); /* Appears 20px to the right of the moved card */
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    opacity: 0;
+    z-index: 1001;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.rating-modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #444;
+    cursor: pointer;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.rating-stars i {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating-stars i.selected {
+    color: #ffcc00;
+}
+
+#thank-you-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#thank-you-message.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.feedback-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+}
+
 .college-grid:has(.college-item:hover) .college-item:not(:hover){
     filter: blur(1.5px);
 }
