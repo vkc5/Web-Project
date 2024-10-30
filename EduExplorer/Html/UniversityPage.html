@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="../JavaScript/UniversityPage.js"></script>
     <nav class="menu-bar">
         <div class="logo">
             <a href="HomePage.html"><img src="../image/UniversityImages/edu.png" alt="Edu Explorer Logo"></a>
@@ -27,7 +28,7 @@
 
         </div>
     </nav>
-    
+
     <div class="college-section-container">
         <div class="college-section">
             <div class="header">
@@ -39,34 +40,43 @@
                     <img src="../image/UniversityImages/Applied Science University.jpg"
                         alt="Applied Science University">
                     <h3>Applied Science University</h3>
-                    <a href="asu.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="asu">Read More</a>
                 </div>
                 <div class="college-item">
                     <img src="../image/UniversityImages/British University.jpeg" alt="British University">
                     <h3>British University</h3>
-                    <a href="bu.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="bu">Read More</a>
                 </div>
                 <div class="college-item">
                     <img src="../image/UniversityImages/RCSI.jpg" alt="RCSI">
                     <h3>RCSI</h3>
-                    <a href="rcsi.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="rcsi">Read More</a>
                 </div>
                 <div class="college-item">
                     <img src="../image/UniversityImages/Bahrain Polytechnic.jpg" alt="Bahrain Polytechnic">
                     <h3>Bahrain Polytechnic</h3>
-                    <a href="bp.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="bp">Read More</a>
                 </div>
                 <div class="college-item">
                     <img src="../image/UniversityImages/University of Bahrain.jpg" alt="University of Bahrain">
                     <h3>University of Bahrain</h3>
-                    <a href="uob.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="uob">Read More</a>
                 </div>
                 <div class="college-item">
                     <img src="../image/UniversityImages/BIBF-Building.jpg" alt="BIBF University">
                     <h3>BIBF University</h3>
-                    <a href="uob.html" class="read-more">Read More</a>
+                    <a href="#" class="read-more" data-info="bibf">Read More</a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-image">
+                <img id="popup-image" src="" alt="University Image">
+            </div>
+            <div class="popup-info" id="popup-info"></div>
+            <span class="close">&times;</span>
         </div>
     </div>
 </body>

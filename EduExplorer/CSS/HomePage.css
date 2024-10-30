@@ -79,14 +79,19 @@ body {
     width: 100%; /* Animate underline on hover */
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
     display: block;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 40px; 
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     list-style-type: none;
@@ -96,6 +101,16 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 1;
+}
+
+.caret-icon {
+    margin-left: 5px; 
+    transition: transform 0.3s ease; 
+}
+
+.dropdown:hover .caret-icon,
+.dropdown:focus-within .caret-icon {
+    transform: rotate(180deg); 
 }
 
 .dropdown-menu li {
@@ -108,21 +123,17 @@ body {
     padding: 12px 20px;
     display: block;
     text-decoration: none;
-    transition: background-color 0.3s, padding-left 0.3s;
-    transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
-
+    transition: background-color 0.3s, padding-left 0.3s, color 0.3s, transform 0.3s;
 }
 
 .dropdown-menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-    padding-left: 25px; /* Indent on hover for better visual effect */
-    backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 25px;
+    color: #ffcc00;
+    transform: scale(1);
     border-radius: 4px;
-
-    color: #ffcc00; /* Change color on hover */
-    transform: scale(1); /* Slightly enlarge the link on hover */
-
 }
+
 .dropdown-menu a::after {
     content: '';
     position: absolute;
@@ -135,8 +146,10 @@ body {
 }
 
 .dropdown-menu a:hover::after {
-    width: 100%; /* Animate underline on hover */
+    width: 100%;
 }
+
+
 
 .icons {
     display: flex;
