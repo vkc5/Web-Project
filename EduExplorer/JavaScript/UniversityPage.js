@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "Applied Science University",
             location: "Building 166, Road 23, Block 623, Eker",
             telephone: "17728777",
+            Colleges:"Private",
             fees: "92.7 per credit hour",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "British University",
             location: "Building 1242, Road 2719, Block 527, Saar",
             telephone: "17130303",
+            Colleges:"Private",
             fees: "7000 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:30 am - 4:30 pm]",
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "RCSI",
             location: "Building 2441, Road 2835, Block 228, Busaiteen",
             telephone: "17351450",
+            Colleges:"Private",
             fees: "14,900 BD for Bahrainis and 17,550 for Non-Bahrainis",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -48,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "Bahrain Polytechnic",
             location: "Road 4003, Block 840, Isa Town",
             telephone: "17897000",
+            Colleges:"Public",
             fees: "120 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -58,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "University of Bahrain",
             location: "Building 1017, Road 5418, Block 1054, Zallaq",
             telephone: "17438888",
+            Colleges:"Public",
             fees: "136 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 9:00 pm]",
@@ -68,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "BIBF University",
             location: "Building 1306, Block 346, Road 4625, Manama",
             telephone: "17815555",
+            Colleges:"Private",
             fees: "4000 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [7:00 am – 7:00 pm]",
@@ -88,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h2>Information Card</h2>
                     <p><strong>Location:</strong> ${data.location}</p>
                     <p><strong>Telephone:</strong> ${data.telephone}</p>
+                    <p><strong>Colleges:</strong> ${data.Colleges}</p>
                     <p><strong>Fees:</strong> ${data.fees}</p>
                     <p><strong>Ages:</strong> ${data.ages}</p>
                     <p><strong>Working Hours:</strong> ${data.workingHours}</p>

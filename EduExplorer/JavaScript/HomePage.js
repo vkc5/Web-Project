@@ -44,12 +44,14 @@ function changeBackgroundImage() {
         });
     });
 }
+window.onload = changeBackgroundImage;
 
+//RegistrationForm
 document.addEventListener("DOMContentLoaded", function () {
     const showRegistration = document.getElementById("showRegistration");
     const registrationForm = document.getElementById("registrationForm");
     const form = document.getElementById("registrationForm");
-    const messageDiv = document.getElementById("message"); 
+    const messageDiv = document.getElementById("message");
   
     showRegistration.addEventListener("click", function (event) {
       event.preventDefault();
@@ -58,47 +60,75 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     form.addEventListener("submit", function (event) {
-      event.preventDefault(); 
-      messageDiv.textContent = ""; 
+      event.preventDefault();
+      messageDiv.textContent = "";
   
-      const firstName = document.getElementById("firstName").value;
-      const lastName = document.getElementById("lastName").value;
-      const phoneNumber = document.getElementById("phoneNumber").value;
-      const email = document.getElementById("email").value;
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var email = document.getElementById("email").value;
   
       // Validation
       let isValid = true;
       if (firstName.length < 3 || lastName.length < 3) {
         isValid = false;
-        messageDiv.textContent += "First Name and Last Name must have at least 3 characters.\n";
-        submitButton.style.backgroundColor = 'red';
+        messageDiv.textContent +=
+          "First Name and Last Name must have at least 3 characters.\n";
+        submitButton.style.backgroundColor = "red";
       }
       if (phoneNumber.length !== 8 || !/^\d+$/.test(phoneNumber)) {
         isValid = false;
         messageDiv.textContent += "Phone number must contain exactly 8 digits.\n";
-        submitButton.style.backgroundColor = 'red';
+        submitButton.style.backgroundColor = "red";
       }
   
-      //Handle Email Validation 
+      //Handle Email Validation
       if (email === "" || !email.includes("@")) {
         isValid = false;
         messageDiv.textContent += "Please enter a valid email address.\n";
-        submitButton.style.backgroundColor = 'red';
+        submitButton.style.backgroundColor = "red";
       }
   
       // Submission
       if (isValid) {
-          messageDiv.textContent = 'Registration successful!';
-          const submitButton = form.querySelector('button[type="submit"]');
-          submitButton.style.backgroundColor = 'lightgreen'; // Example styling, remove if not needed
-          form.reset(); // Reset the form
+        messageDiv.textContent = "Registration successful!";
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.style.backgroundColor = "lightgreen";
+        messageDiv.style.color = "darkgreen";
+        // Form submitted successfully
+        displayUserName(firstName, lastName);
+  
+        // Store user's name in local storage
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+  
+        // Disable form fields after successful registration
+        disableFormFields(form);
       } else {
-          messageDiv.style.color = 'red';
+        messageDiv.style.color = "red";
       }
+    });
   });
-});
+  
+  function displayUserName(firstName, lastName) {
+    var userNameElement = document.getElementById("userName");
+    userNameElement.textContent = `Welcome, Explorer ${firstName} ${lastName}!`;
+    userNameElement.style.display = "inline";
+}
 
-document.addEventListener('DOMContentLoaded', function () {
+  
+  function disableFormFields(form) {
+    const inputFields = form.querySelectorAll("input, select, textarea"); //select all form elements
+    inputFields.forEach((field) => {
+      field.disabled = true;
+    });
+    const submitButton = form.querySelector('button[type="submit"]');
+    submitButton.disabled = true; // Disable the submit button
+  }
+
+
+    //arrow dropdown
+    document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdown = document.querySelector('.dropdown');
 
@@ -115,6 +145,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-window.onload = changeBackgroundImage;

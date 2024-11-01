@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../CSS/SchoolPage.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolPage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <script src="../JavaScript/SchoolPage.js"></script>
+    <nav class="menu-bar">
+        <div class="logo">
+            <a href="HomePage.html"><img src="../image/SchoolPageImages/edu.png" alt="Edu Explorer Logo"></a>
+            <div class="logo-text"><br>
+                <span class="edu"> Edu <br> Explorer</span><br>
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="NurseyPage.html">Nursey</a></li>
+            <li><a href="SchoolPage.html">K-12</a></li>
+            <li><a href="UniversityPage.html">Colleges</a></li>
+        </ul>
+        <div class="icons">
+            <a href=""><i><img src="../image//SchoolPageImages/user-interface.png" alt="user-interface"></i></a>
+
+        </div>
+    </nav>
+
+    <div class="School-section-container">
+        <div class="School-section">
+            <div class="header">
+                <h2>Explore K-12 Schools</h2>
+                <img src="../image/SchoolPageImages/filter.png" alt="Filter Icon" class="filter-icon">
+            </div>
+            <div class="School-grid">
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Al Noor International School.jpg"
+                        alt="Al Noor International School">
+                    <h3>Al Noor International School</h3>
+                    <a href="#" class="read-more" data-info="Noor">Read More</a>
+                </div>
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Al-Hidd Intermediate Primary Boys.jpg" alt="Al-Hidd Intermediate Primary School">
+                    <h3>Al-Hidd Intermediate School</h3>
+                    <a href="#" class="read-more" data-info="Hidd">Read More</a>
+                </div>
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Ibn Kuldoon National School.jpg" alt="Ibn Kuldoon National School">
+                    <h3>Ibn Kuldoon National School</h3>
+                    <a href="#" class="read-more" data-info="Kuldoon">Read More</a>
+                </div>
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Philippine School.jpeg" alt="Philippine School">
+                    <h3>Philippine School</h3>
+                    <a href="#" class="read-more" data-info="Philippine">Read More</a>
+                </div>
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Qurtoba Intermediate Girls.jpg" alt="Qurtoba Intermediate School">
+                    <h3>Qurtoba Intermediate School</h3>
+                    <a href="#" class="read-more" data-info="Qurtoba">Read More</a>
+                </div>
+                <div class="School-item">
+                    <img src="../image/SchoolPageImages/Um Kalthoom Intermediate Girls.jpg" alt="Um Kalthoom Intermediate School">
+                    <h3>Um Kalthoom Intermediate School</h3>
+                    <a href="#" class="read-more" data-info="Kalthoom">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <div class="popup-content">
+            <div class="popup-image">
+                <img id="popup-image" src="" alt="University Image">
+            </div>
+            <div class="popup-info" id="popup-info"></div>
+            <span class="close">&times;</span>
+        </div>
+    </div>
+
+    <!-- Rating Modal -->
+    <div id="rating-modal" class="rating-modal">
+        <span class="close">&times;</span>
+        <h2>Rate Your Experience</h2>
+        <div class="rating-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+        <textarea id="feedback" rows="4" cols="50" placeholder="Provide your feedback..."></textarea>
+        <div id="feedback-error" class="feedback-error">Please provide a rating or feedback before submitting.</div>
+        <button id="submit-feedback" class="rate-me-button">Submit</button>
+    </div>
+        
+    <div id="thank-you-message">Thanks for your feedback!</div>
+
+</body>
+
+</html>

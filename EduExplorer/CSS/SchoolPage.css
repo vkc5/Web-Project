@@ -1,0 +1,353 @@
+body {
+    background-color: #f1e9d79f;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    
+}
+.menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+    padding: 20px 20px;
+    position: relative;
+    
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
+
+
+}
+
+.School-section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh -100px); /* Leaves space for the navbar */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1;
+}
+
+.edu {
+    font-size: 1.2em;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 30px;
+    position: relative;
+}
+
+.menu li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 10px;
+}
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    color: #000000;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.icons a:hover {
+    color: #ccc;
+}
+
+.icons img {
+    height: 45px;
+}
+
+.School-section {
+    text-align: center;
+    width:56%;
+    /* background-color: #ffffff;
+    position: relative;
+    */
+   /* border-radius: 10px;
+    padding: 20px;
+    padding-left: 60px;
+    padding-bottom: 60px;
+    padding-right:60px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 2em;
+    color: #333;
+   /* font-style: italic;*/
+}
+
+.filter-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.popup-modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Make sure it's on top of other elements */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transition: transform 0.5s ease;
+}
+
+.popup-modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 850px;
+    max-width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    gap: 20px;
+    transform: translateY(-30px);
+    animation: slide-down 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.popup-modal.move-left {
+    transform: translateX(-20%); /* Moves the card 50% to the left */
+    transition: transform 0.5s ease;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #444;
+    cursor: pointer;
+}
+
+/* Content inside popup */
+.popup-image {
+    flex: 2;
+}
+
+.popup-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.popup-info {
+    flex: 2;
+}
+
+.popup-info h2 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.popup-info p {
+    margin-bottom: 10px;
+}
+
+.rate-me-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.rate-me-button:hover {
+    background-color: #333;
+}
+
+.School-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.School-item {
+    background-color: #ffffff16;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-right: 0px;
+}
+
+.School-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.School-item img {
+    width: 290px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.School-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background-color: #333;
+}
+
+.rating-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 80px); /* Appears 20px to the right of the moved card */
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    opacity: 0;
+    z-index: 1001;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.rating-modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #444;
+    cursor: pointer;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.rating-stars i {
+    font-size: 2em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating-stars i.selected {
+    color: #ffcc00;
+}
+
+#thank-you-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+    font-size: 1.5em;
+    color: #333;
+}
+
+#thank-you-message.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.feedback-error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+}
+
+.School-grid:has(.School-item:hover) .School-item:not(:hover){
+    filter: blur(1.5px);
+}
