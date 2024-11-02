@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const feedbackError = document.getElementById('feedback-error'); // Error message element
 
     let hasRated = false; // To track if a star rating was made
-    
+
     const universityData = {
         asu: {
             name: "Applied Science University",
             location: "Building 166, Road 23, Block 623, Eker",
             telephone: "17728777",
-            Colleges:"Private",
+            Colleges: "Private",
             fees: "92.7 per credit hour",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "British University",
             location: "Building 1242, Road 2719, Block 527, Saar",
             telephone: "17130303",
-            Colleges:"Private",
+            Colleges: "Private",
             fees: "7000 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:30 am - 4:30 pm]",
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "RCSI",
             location: "Building 2441, Road 2835, Block 228, Busaiteen",
             telephone: "17351450",
-            Colleges:"Private",
+            Colleges: "Private",
             fees: "14,900 BD for Bahrainis and 17,550 for Non-Bahrainis",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "Bahrain Polytechnic",
             location: "Road 4003, Block 840, Isa Town",
             telephone: "17897000",
-            Colleges:"Public",
+            Colleges: "Public",
             fees: "120 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 5:00 pm]",
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "University of Bahrain",
             location: "Building 1017, Road 5418, Block 1054, Zallaq",
             telephone: "17438888",
-            Colleges:"Public",
+            Colleges: "Public",
             fees: "136 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [8:00 am - 9:00 pm]",
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: "BIBF University",
             location: "Building 1306, Block 346, Road 4625, Manama",
             telephone: "17815555",
-            Colleges:"Private",
+            Colleges: "Private",
             fees: "4000 BD",
             ages: "18 years and above",
             workingHours: "Sunday to Thursday [7:00 am – 7:00 pm]",
@@ -189,4 +189,22 @@ document.addEventListener('DOMContentLoaded', function () {
         stars.forEach((star) => star.classList.remove('selected')); // Unselect all stars
         feedbackError.style.display = 'none'; // Hide error message
     }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    // Toggle the dropdown on click
+    dropdownToggle.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        dropdown.classList.toggle('open'); // Toggle the 'open' class to show or hide the dropdown menu
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!dropdown.contains(event.target) && dropdown.classList.contains('open')) {
+            dropdown.classList.remove('open');
+        }
+    });
 });
