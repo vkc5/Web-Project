@@ -208,6 +208,71 @@ body {
     cursor: pointer;
 }
 
+/* Filter Panel Container */
+.filter-panel {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 200px; 
+    right: 50px;
+    width: 300px;
+    padding: 20px;
+    background-color: #f1e9d79f; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+}
+
+/* Show Filter Panel when open */
+.filter-panel.open {
+    display: block; 
+}
+
+.filter-options label {
+    display: block; 
+    margin: 10px 0 5px;
+    margin-bottom: 5px;
+}
+
+/* Price Range Input Styling */
+.filter-options input[type="range"] {
+    width: 100%; /* Full width for the slider */
+}
+
+#price-output {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; 
+    color: #eb7777;
+}
+
+.circle-group {
+    display: flex; 
+    align-items: center;
+    gap: 2px; /* Adds spacing between the buttons */
+    margin-bottom: 5px; /* Spacing at the bottom */
+
+}
+
+.circle-group label {
+    margin-left: 5px; 
+    margin-bottom: 5px;
+}
+
+#apply-filters {
+    display: inline-block;
+    padding: 6px 20px;
+    background-color: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#apply-filters:hover {
+    background-color: #333;
+}
+
 .popup-modal {
     display: none; /* Hidden by default */
     position: fixed; 
@@ -324,7 +389,7 @@ body {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
     margin-right: 0px;
 }
 
