@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const locationFilter = document.getElementById('location-filter');
     const collegeGrid = document.querySelector('.college-grid');
 
+    const maxPrice = 18000;  // Assuming 18,000 BD is the max value
+    priceFilter.max = maxPrice;
+    priceFilter.value = maxPrice; // Set the initial value to max
+    priceOutput.textContent = `BD ${maxPrice}`; // Display initial price
+
     let hasRated = false; // To track if a star rating was made
 
     const universityData = {
