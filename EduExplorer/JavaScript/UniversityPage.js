@@ -11,16 +11,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const stars = document.querySelectorAll('.rating-stars i');
     const feedbackError = document.getElementById('feedback-error');
 
-    // Variables for filter functionality
+    // Added variables for filter 
     const filterIcon = document.getElementById('filter-icon');
     const filterPanel = document.getElementById('filter-panel');
     const priceFilter = document.getElementById('price-filter');
     const priceOutput = document.getElementById('price-output');
     const applyFiltersBtn = document.getElementById('apply-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');  // Reset Button
     const locationFilter = document.getElementById('location-filter');
     const collegeGrid = document.querySelector('.college-grid');
 
-    let hasRated = false;
+    let hasRated = false; // To track if a star rating was made
 
     const universityData = {
         asu: {
@@ -93,12 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Populate location dropdown dynamically
     function populateLocationFilter(data) {
-        const uniqueLocations = [...new Set(Object.values(data).map(college => college.location))];
+        const uniqueLocations = [...new Set(Object.values(data).map(college => college.location))]; // Get unique locations
         uniqueLocations.forEach(location => {
             const option = document.createElement('option');
             option.value = location;
             option.textContent = location;
-            locationFilter.appendChild(option);
+            locationFilter.appendChild(option); // Add each location as an option
         });
     }
 
@@ -260,9 +261,17 @@ document.addEventListener('DOMContentLoaded', function () {
     priceFilter.addEventListener('input', function () {
         priceOutput.textContent = `BD ${priceFilter.value}`;
     });
+
+    // Reset filters
+    resetFiltersBtn.addEventListener('click', function () {
+        priceFilter.value = priceFilter.max; // Reset price range
+        priceOutput.textContent = `BD ${priceFilter.max}`;
+        locationFilter.value = ""; // Reset location filter
+        document.querySelectorAll('input[name="type"]').forEach(input => input.checked = false); // Reset public/private filter
+        renderColleges(universityData); // Re-render all colleges
+    });
 });
 
-//arrow (levels) function
 document.addEventListener('DOMContentLoaded', function () {
     const dropdownToggle = document.querySelector('.dropdown-toggle');
     const dropdown = document.querySelector('.dropdown');

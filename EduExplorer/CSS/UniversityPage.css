@@ -208,27 +208,28 @@ body {
     cursor: pointer;
 }
 
-/* Filter Panel hidden by default, with smooth transition */
+/* Filter panel initially hidden with zero height */
 .filter-panel {
+    display: block;
     position: absolute;
     top: 200px;
-    right: -400px; /* Offscreen initially */
+    right: 50px;
     width: 300px;
     padding: 20px;
     background-color: #f1e9d79f; /* Light background color */
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: all 0.4s ease; /* Smooth transition */
+    height: 0; /* Initially collapsed */
+    overflow: hidden; /* Prevents content from spilling out */
     opacity: 0; /* Initially invisible */
-    pointer-events: none; /* Disable interaction when closed */
+    transition: height 0.3s ease, opacity 0.3s ease; /* Smooth height and opacity transition */
 }
 
 /* When the panel is open */
 .filter-panel.open {
-    right: 50px; /* Slide into view */
+    height: 240px; /* Set a height when the panel is open */
     opacity: 1; /* Fully visible */
-    pointer-events: auto; /* Enable interaction */
 }
 
 .filter-options label {
@@ -269,6 +270,19 @@ body {
 }
 
 #apply-filters:hover {
+    background-color: #333;
+}
+#reset-filters {
+    display: inline-block;
+    padding: 6px 20px;
+    background-color: #444;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#reset-filters:hover {
     background-color: #333;
 }
 
