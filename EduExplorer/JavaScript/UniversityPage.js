@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const stars = document.querySelectorAll('.rating-stars i');
     const feedbackError = document.getElementById('feedback-error');
 
-    // Added variables for filter 
+    // Variables for filter functionality
     const filterIcon = document.getElementById('filter-icon');
     const filterPanel = document.getElementById('filter-panel');
     const priceFilter = document.getElementById('price-filter');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const locationFilter = document.getElementById('location-filter');
     const collegeGrid = document.querySelector('.college-grid');
 
-    let hasRated = false; // To track if a star rating was made
+    let hasRated = false;
 
     const universityData = {
         asu: {
@@ -93,12 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Populate location dropdown dynamically
     function populateLocationFilter(data) {
-        const uniqueLocations = [...new Set(Object.values(data).map(college => college.location))]; // Get unique locations
+        const uniqueLocations = [...new Set(Object.values(data).map(college => college.location))];
         uniqueLocations.forEach(location => {
             const option = document.createElement('option');
             option.value = location;
             option.textContent = location;
-            locationFilter.appendChild(option); // Add each location as an option
+            locationFilter.appendChild(option);
         });
     }
 
@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle the dropdown on click
     dropdownToggle.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        dropdown.classList.toggle('open'); // Toggle the 'open' class to show or hide the dropdown menu
+        event.preventDefault();
+        dropdown.classList.toggle('open');
     });
 
     // Close the dropdown when clicking outside

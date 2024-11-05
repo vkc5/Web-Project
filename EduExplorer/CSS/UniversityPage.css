@@ -208,55 +208,54 @@ body {
     cursor: pointer;
 }
 
-/* Filter Panel Container */
+/* Filter Panel hidden by default, with smooth transition */
 .filter-panel {
-    display: none; /* Hidden by default */
     position: absolute;
-    top: 200px; 
-    right: 50px;
+    top: 200px;
+    right: -400px; /* Offscreen initially */
     width: 300px;
     padding: 20px;
     background-color: #f1e9d79f; /* Light background color */
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-
+    transition: all 0.4s ease; /* Smooth transition */
+    opacity: 0; /* Initially invisible */
+    pointer-events: none; /* Disable interaction when closed */
 }
 
-/* Show Filter Panel when open */
+/* When the panel is open */
 .filter-panel.open {
-    display: block; 
+    right: 50px; /* Slide into view */
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interaction */
 }
 
 .filter-options label {
-    display: block; 
+    display: block;
     margin: 10px 0 5px;
-    margin-bottom: 5px;
 }
 
-/* Price Range Input Styling */
 .filter-options input[type="range"] {
-    width: 100%; /* Full width for the slider */
+    width: 100%;
 }
 
 #price-output {
     display: block;
     margin-bottom: 10px;
-    font-weight: bold; 
+    font-weight: bold;
     color: #eb7777;
 }
 
 .circle-group {
-    display: flex; 
+    display: flex;
     align-items: center;
-    gap: 2px; /* Adds spacing between the buttons */
-    margin-bottom: 5px; /* Spacing at the bottom */
-
+    gap: 5px;
+    margin-bottom: 5px;
 }
 
 .circle-group label {
-    margin-left: 5px; 
-    margin-bottom: 5px;
+    margin-left: 5px;
 }
 
 #apply-filters {
