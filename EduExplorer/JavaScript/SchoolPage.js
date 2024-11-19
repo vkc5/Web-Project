@@ -9,17 +9,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitFeedback = document.getElementById('submit-feedback');
     const feedbackTextarea = document.getElementById('feedback');
     const stars = document.querySelectorAll('.rating-stars i');
-    const feedbackError = document.getElementById('feedback-error'); // Error message element
+    const feedbackError = document.getElementById('feedback-error');
+
+    // Added variables for filter 
+    const filterIcon = document.getElementById('filter-icon');
+    const filterPanel = document.getElementById('filter-panel');
+    const priceFilter = document.getElementById('price-filter');
+    const priceOutput = document.getElementById('price-output');
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');  // Reset Button
+    const locationFilter = document.getElementById('location-filter');
+    const SchoolGrid = document.querySelector('.School-grid');
+
+    const maxPrice = 18000;  // Assuming 18,000 BD is the max value
+    priceFilter.max = maxPrice;
+    priceFilter.value = maxPrice; // Set the initial value to max
+    priceOutput.textContent = `BD ${maxPrice}`; // Display initial price
 
     let hasRated = false; // To track if a star rating was made
 
     const SchoolData = {
         Noor: {
             name: "Al Noor International School",
-            location: "Building 108, Road 1104, Block 611, Sitra",
+            location: "Sitra",
             telephone: "17736773",
-            fees: "738 BD",
-            School: "Private",
+            fees: 738,
+            Schools: "Private",
             ages: "3 years to 18 years",
             workingHours: "Sunday to Thursday [7:00 am - 2:00 pm]",
             website: "https://alnoor.com.bh/",
@@ -27,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         Hidd: {
             name: "Al-Hidd Intermediate School",
-            location: "Building 263, Road 207, Block 102, Muharraq",
+            location: "Muharraq",
             telephone: "17671315",
-            fees: "-",
-            School: "Public",
+            fees: 0,
+            Schools: "Public",
             ages: "11 years to 15 years",
             workingHours: "Sunday to Thursday [6:00 am - 2:30 pm]",
             website: "https://moe.gov.bh/",
@@ -38,10 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         Kuldoon: {
             name: "Ibn Kuldoon National School",
-            location: "Building 161, Road 4111, Block 841, Isa Town",
+            location: "Isa Town",
             telephone: "17780661",
-            fees: "4980 BD",
-            School: "Private",
+            fees: 4980,
+            Schools: "Private",
             ages: "4 years to 18 years",
             workingHours: "Sunday to Thursday [7:00 am - 2:00 pm]",
             website: "https://www.ikns.edu.bh/",
@@ -49,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         Philippine: {
             name: "Philippine School",
-            location: "Building 989, Road 3222, Block 732, A’ali",
+            location: "A’ali",
             telephone: "17645451",
-            fees: "1200 BD",
-            School: "Private",
+            fees: 1200,
+            Schools: "Private",
             ages: "3 years to 18 years",
             workingHours: "Sunday to Thursday [7:00 am - 3:00 pm]",
             website: "https://psb.edu.bh/",
@@ -60,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         Qurtoba: {
             name: "Qurtoba Intermediate School",
-            location: "Building 69, Avenue 61, Block 361, Manama",
+            location: "Manama",
             telephone: "17403415",
-            fees: "-",
-            School: "Public",
+            fees: 0,
+            Schools: "Public",
             ages: "3 years to 18 years",
             workingHours: "Sunday to Thursday [6:00 am - 2:00 pm]",
             website: "https://moe.gov.bh/",
@@ -71,10 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         Kalthoom: {
             name: "Um Kalthoom Intermediate School",
-            location: "Building 816, Road 1525, Block 813, Isa Town",
+            location: "Isa Town",
             telephone: "17622639",
-            fees: "-",
-            School: "Public",
+            fees: 0,
+            Schools: "Public",
             ages: "11 years to 15 years",
             workingHours: "Sunday to Thursday [6:00 am - 2:00 pm]",
             website: "https://moe.gov.bh/",
@@ -82,32 +97,67 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    readMoreLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            popupModal.classList.remove('move-left'); // Reset card to original position
-            const infoKey = link.getAttribute('data-info');
-            const data = SchoolData[infoKey];
-            if (data) {
-                popupImage.src = data.image;
-                popupInfo.innerHTML = `
-                    <h2>Information Card</h2>
-                    <p><strong>Location:</strong> ${data.location}</p>
-                    <p><strong>Telephone:</strong> ${data.telephone}</p>
-                    <p><strong>School:</strong> ${data.School}</p>
-                    <p><strong>Fees:</strong> ${data.fees}</p>
-                    <p><strong>Ages:</strong> ${data.ages}</p>
-                    <p><strong>Working Hours:</strong> ${data.workingHours}</p>
-                    <p><strong>Link to Website:</strong> <a href="${data.website}" target="_blank">${data.website}</a></p>
-                    <a href="#" class="rate-me-button" id="rate-me-button">Rate Me</a>
-                `;
-                popupModal.style.display = 'flex';
-                setTimeout(() => {
-                    popupModal.classList.add('show'); // Show modal with animation
-                }, 10);
-            }
+    // Populate location dropdown dynamically
+    function populateLocationFilter(data) {
+        const uniqueLocations = [...new Set(Object.values(data).map(School => School.location))]; // Get unique locations
+        uniqueLocations.forEach(location => {
+            const option = document.createElement('option');
+            option.value = location;
+            option.textContent = location;
+            locationFilter.appendChild(option); // Add each location as an option
         });
-    });
+    }
+
+    // Function to render filtered School
+    function renderSchool(filteredData) {
+        SchoolGrid.innerHTML = ''; // Clear existing School
+
+        Object.keys(filteredData).forEach((key) => {
+            const School = filteredData[key];
+            const SchoolItem = document.createElement('div');
+            SchoolItem.classList.add('School-item');
+            SchoolItem.setAttribute('data-location', School.location);
+            SchoolItem.setAttribute('data-fees', parseFloat(School.fees));
+            SchoolItem.setAttribute('data-type', School.Schools);
+
+            SchoolItem.innerHTML = `
+                <img src="${School.image}" alt="${School.name}">
+                <h3>${School.name}</h3>
+                <a href="#" class="read-more" data-info="${key}">Read More</a>
+            `;
+            SchoolGrid.appendChild(SchoolItem);
+        });
+
+        // Reassign "Read More" event listeners to the dynamically added School items
+        const newReadMoreLinks = document.querySelectorAll('.read-more');
+        newReadMoreLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                popupModal.classList.remove('move-left');
+                const infoKey = link.getAttribute('data-info');
+                const data = SchoolData[infoKey];
+                if (data) {
+                    popupImage.src = data.image;
+                    popupInfo.innerHTML = `
+                        <h2>Information Card</h2>
+                        <p><strong>Location:</strong> ${data.location}</p>
+                        <p><strong>Telephone:</strong> ${data.telephone}</p>
+                        <p><strong>Schools:</strong> ${data.Schools}</p>
+                        <p><strong>Fees:</strong>  ${data.fees} BD</p>
+                        <p><strong>Working Hours:</strong> ${data.workingHours}</p>
+                        <p><strong>Link to Website:</strong> <a href="${data.website}" target="_blank">${data.website}</a></p>
+                        <a href="#" class="rate-me-button" id="rate-me-button">Rate Me</a>
+                    `;
+                    popupModal.style.display = 'flex';
+                    setTimeout(() => {
+                        popupModal.classList.add('show');
+                    }, 10);
+                }
+            });
+        });
+    }
+
+    renderSchool(SchoolData); // Initial render of all School
 
     closeBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -117,9 +167,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 parentModal.style.display = 'none';
                 if (parentModal === ratingModal) {
                     setTimeout(() => {
-                        popupModal.classList.remove('move-left'); // Reset card to original position smoothly
-                    }, 10); // A small delay to ensure the modal transition finishes first
-                    resetRatingModal(); // Reset stars and feedback
+                        popupModal.classList.remove('move-left');
+                    }, 10);
+                    resetRatingModal();
                 }
             }, 500);
         });
@@ -128,40 +178,36 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function (event) {
         if (event.target && event.target.id === 'rate-me-button') {
             event.preventDefault();
-            popupModal.classList.add('move-left'); // Move the card to the left
+            popupModal.classList.add('move-left');
             setTimeout(() => {
                 ratingModal.style.display = 'block';
                 setTimeout(() => {
-                    ratingModal.classList.add('show'); // Show the rating modal next to it
+                    ratingModal.classList.add('show');
                 }, 10);
             }, 500);
         }
     });
 
-    // Track if a star is selected
     stars.forEach((star, index) => {
         star.addEventListener('click', () => {
             stars.forEach((s, i) => {
                 s.classList.toggle('selected', i <= index);
             });
-            hasRated = true; // User has rated
-            feedbackError.style.display = 'none'; // Hide error if a star is selected
+            hasRated = true;
+            feedbackError.style.display = 'none';
         });
     });
 
-    // Submit feedback button click
     submitFeedback.addEventListener('click', function () {
         const feedback = feedbackTextarea.value.trim();
 
-        // Validation: Check if user provided either a rating or feedback
         if (!hasRated && feedback === "") {
-            feedbackError.style.display = 'block'; // Show error message inside the feedback card
-            return; // Do not proceed
+            feedbackError.style.display = 'block';
+            return;
         }
 
-        feedbackError.style.display = 'none'; // Hide error if validation passes
+        feedbackError.style.display = 'none';
 
-        // Show thank you message after valid submission
         ratingModal.classList.remove('show');
         setTimeout(() => {
             ratingModal.style.display = 'none';
@@ -170,25 +216,65 @@ document.addEventListener('DOMContentLoaded', function () {
                 thankYouMessage.classList.add('show');
             }, 10);
 
-            // Hide the thank you message after a few seconds and reset card
             setTimeout(() => {
                 thankYouMessage.classList.remove('show');
                 setTimeout(() => {
                     thankYouMessage.style.display = 'none';
-                    popupModal.classList.remove('move-left'); // Smoothly reset card to original position
-                    resetRatingModal(); // Reset stars and feedback after submission
+                    popupModal.classList.remove('move-left');
+                    resetRatingModal();
                 }, 500);
-            }, 2000); // Thank you message visible for 2 seconds
+            }, 2000);
         }, 500);
     });
 
-    // Reset the feedback modal when closed or if needed
     function resetRatingModal() {
         hasRated = false;
-        feedbackTextarea.value = ""; // Clear feedback textarea
-        stars.forEach((star) => star.classList.remove('selected')); // Unselect all stars
-        feedbackError.style.display = 'none'; // Hide error message
+        feedbackTextarea.value = "";
+        stars.forEach((star) => star.classList.remove('selected'));
+        feedbackError.style.display = 'none';
     }
+
+    // Filter logic
+
+    // Call function to populate location dropdown
+    populateLocationFilter(SchoolData);
+
+    filterIcon.addEventListener('click', function () {
+        filterPanel.classList.toggle('open');
+    });
+
+    applyFiltersBtn.addEventListener('click', function () {
+        const selectedLocation = locationFilter.value;
+        const selectedPrice = parseFloat(priceFilter.value);
+        const selectedType = document.querySelector('input[name="type"]:checked')?.value;
+
+        const filteredData = Object.keys(SchoolData).filter(key => {
+            const School = SchoolData[key];
+            const matchesLocation = selectedLocation === "" || School.location === selectedLocation;
+            const matchesPrice = parseFloat(School.fees) <= selectedPrice;
+            const matchesType = !selectedType || School.Schools === selectedType;
+            return matchesLocation && matchesPrice && matchesType;
+        }).reduce((obj, key) => {
+            obj[key] = SchoolData[key];
+            return obj;
+        }, {});
+
+        renderSchool(filteredData);
+    });
+
+    // Update the price filter value dynamically
+    priceFilter.addEventListener('input', function () {
+        priceOutput.textContent = `BD ${priceFilter.value}`;
+    });
+
+    // Reset filters
+    resetFiltersBtn.addEventListener('click', function () {
+        priceFilter.value = priceFilter.max; // Reset price range
+        priceOutput.textContent = `BD ${priceFilter.max}`;
+        locationFilter.value = ""; // Reset location filter
+        document.querySelectorAll('input[name="type"]').forEach(input => input.checked = false); // Reset public/private filter
+        renderSchool(SchoolData); // Re-render all School
+    });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -197,8 +283,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle the dropdown on click
     dropdownToggle.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default anchor click behavior
-        dropdown.classList.toggle('open'); // Toggle the 'open' class to show or hide the dropdown menu
+        event.preventDefault();
+        dropdown.classList.toggle('open');
     });
 
     // Close the dropdown when clicking outside

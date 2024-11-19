@@ -40,8 +40,8 @@
     <div class="Nursey-section-container">
         <div class="Nursey-section">
             <div class="header">
-                <h2>Explore Nursey Schools</h2>
-                <img src="../image/NurseryImages/filter.png" alt="Filter Icon" class="filter-icon">
+                <h2>Explore Nursery Schools</h2>
+                <img src="../image/NurseryImages/filter.png" alt="Filter Icon" class="filter-icon" id="filter-icon">
             </div>
             <div class="Nursey-grid">
                 <div class="Nursey-item">
@@ -106,6 +106,33 @@
     </div>
         
     <div id="thank-you-message">Thanks for your feedback!</div>
+    
+    <div id="filter-panel" class="filter-panel">
+        <div class="filter-options">
+            <label for="location-filter">Location</label>
+            <!-- The locations will be populated dynamically -->
+            <select id="location-filter">
+                <option value="">Select Location</option>
+            </select>
+
+            <label for="price-filter">Price</label>
+            <input type="range" id="price-filter" min="0" max="18000" step="100">
+            <span id="price-output">BD 9,000</span>
+
+            <label>Public/Private</label>
+            <div class="circle-group">
+                <input type="radio" id="public" name="type" value="Public">
+                <label for="public">Public</label>
+                
+                <input type="radio" id="private" name="type" value="Private">
+                <label for="private">Private</label>
+            </div>
+
+            <button id="apply-filters">Apply Filters</button>
+            <button id="reset-filters">Reset Filters</button>
+        </div>
+    </div>
+
 
 </body>
 
