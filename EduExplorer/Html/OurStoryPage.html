@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/HomePage.css" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <link rel="stylesheet" href="../CSS/OurStoryPage.css"> <!-- Link to the CSS file -->
+</head>
+
+<body>
+    <nav class="menu-bar">
+        <div class="logo">
+            <a href="HomePage.html"><img src="../image/OurStoryPageImages/edu.png" alt="Edu Explorer Logo"></a>
+            <div class="logo-text">
+                <span class="edu">Edu <br> Explorer</span>
+            </div>
+        </div>
+        <ul class="menu">
+            <li><a href="HomePage.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Levels<i class="fas fa-caret-down caret-icon"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="NurseyPage.html">Nursery</a></li>
+                    <li><a href="SchoolPage.html">K-12</a></li>
+                    <li><a href="UniversityPage.html">Colleges</a></li>
+                </ul>
+            </li>
+            <li><a href="OurStoryPage.html">About Us</a></li>
+            <li><a href="MakingOfPage.html">Making Of</a></li>
+        </ul>
+        <div class="icons">
+            <a href="#" id="showRegistration"><i><img src="../image/OurStoryPageImages/user-interface.png"
+                        alt="user-interface" /></i></a>
+            <div id="userName" style="display: inline"></div>
+        </div>
+    </nav>
+
+    <h1>Our Story</h1>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="../image/OurStoryPageImages/Image 5.jpg" alt="Image 5">
+            <div class="paragraph">• Rana: Responsible for designing and creating the main pages of the website, Rana
+                focused on crafting a user-friendly and visually appealing layout that enhanced the overall user
+                experience.</div>
+        </div>
+        <div class="image-box">
+            <img src="../image/OurStoryPageImages/Image 2.jpg" alt="Image 2">
+            <div class="paragraph">• Mohammed: Tasked with developing the filter system, Mohammed enabled users to
+                easily navigate the website and find specific information about schools and colleges, making the site
+                more functional.</div>
+        </div>
+        <div class="image-box">
+            <img src="../image/OurStoryPageImages/Image 3.png" alt="Image 3">
+            <div class="paragraph">• Batool: In addition to being in charge of the registration form, Batool also served
+                as the project leader. She ensured that the team stayed organized and on schedule, while also making the
+                registration form functional and user-friendly for prospective students.</div>
+        </div>
+        <div class="image-box">
+            <img src="../image/OurStoryPageImages/Image 4.jpg" alt="Image 4">
+            <div class="paragraph">• Yousif: Focused on the overall design and styling of the website, Yousif enhanced
+                its aesthetic appeal and ensured a cohesive look throughout, contributing to the site's professionalism.
+            </div>
+        </div>
+        <div class="image-box">
+            <img src="../image/OurStoryPageImages/image 7.jpg" alt="Image 7">
+            <div class="paragraph">• Noora: In the "Our Story" page, she designed the layout using HTML and CSS to
+                effectively showcase EduExplorer's vision and mission. In the "Making Of" section, she described her
+                approach to responsive design and user-friendly aesthetics.</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="summary-title">EduExplorer Summary</h1>
+
+        <div class="section overview">
+            <h2>Project Overview</h2>
+            <p>The EduExplorer project aimed to create a comprehensive website that centralizes information about
+                schools and colleges. The objective was to provide users with easy access to data such as course
+                offerings, admission requirements, and campus facilities. The team collaborated to design the user
+                interface, gather the necessary information, and develop the website, with each member taking on
+                specific roles from research to front-end development.</p>
+        </div>
+
+        <div class="section challenges">
+            <h2>Challenges Faced and Solutions Implemented</h2>
+            <p>The primary challenge was time management, as multiple projects were running concurrently. To address
+                this, the team appointed a project leader who organized tasks, created a detailed schedule, and
+                facilitated regular check-ins to keep everyone accountable and adjust priorities as needed.</p>
+        </div>
+
+        <div class="section lessons">
+            <h2>Lessons Learned About Group Project Work</h2>
+            <p>The project taught valuable lessons about collaboration and communication. Clearly defining roles and
+                responsibilities, and maintaining open communication through regular meetings, fostered a collaborative
+                atmosphere that improved working relationships and the overall quality of the project.</p>
+        </div>
+
+        <div class="section skills">
+            <h2>Technical Skills Gained</h2>
+            <p>The project significantly enhanced the team's web development skills, providing hands-on experience with
+                HTML, CSS, and JavaScript to build a responsive and user-friendly website. Additionally, the team
+                learned to utilize project management and version control tools, which are crucial skills for future
+                endeavors.</p>
+        </div>
+
+        <div class="section conclusion">
+            <h2>Conclusion</h2>
+            <p>The EduExplorer project was a rich learning experience that honed both technical skills and understanding
+                of teamwork and project management. The challenges faced and overcome strengthened the group dynamics
+                and the knowledge gained will undoubtedly benefit the team in their future projects.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Edu Explorer. All rights reserved.</p>
+    </footer>
+
+    <div id="registrationForm" style="display: none;">
+        <form>
+            <h1>Enter your details!</h1>
+            <input type="text" id="firstName" placeholder="First Name (3 letters at least)">
+            <input type="text" id="lastName" placeholder="Last Name (3 letters at least)">
+            <input type="email" id="email" placeholder="Email (Should include @ sign)">
+            <input type="tel" id="phoneNumber" placeholder="Phone Number (Exactly 8 digits)">
+            <button type="submit" id="submitButton">Register</button>
+            <div id="message"></div>
+        </form>
+    </div>
+
+    <script src="../JavaScript/OurStoryPage.js"></script>
+</body>
+
+</html>
