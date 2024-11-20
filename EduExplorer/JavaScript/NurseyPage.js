@@ -420,3 +420,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Get all counter elements
+const counters = document.querySelectorAll('.counter');
+
+// Function to check if the element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top >= 0 && rect.bottom <= window.innerHeight;
+}
+
+// Listen for the scroll event
+window.addEventListener('scroll', () => {
+    counters.forEach(counter => {
+        if (isInViewport(counter) && !counter.classList.contains('visible')) {
+            // Add 'visible' class to trigger animation
+            counter.classList.add('visible');
+            // Optionally, start the counting animation if necessary
+            startCounting(counter.querySelector('.number'));
+        }
+    });
+});
+
+// Function to start counting animation (same as previous)
+function startCounting(counterElement) {
+    const target = parseInt(counterElement.dataset.target);
+    let current = 0;
+
+    const timer = setInterval(() => {
+        const step = target / 100;
+        current += step;
+        counterElement.textContent = Math.round(current) ;
+
+        if (current >= target) {
+            clearInterval(timer); // Stop counting when target is reached
+        }
+    }, 16);
+}

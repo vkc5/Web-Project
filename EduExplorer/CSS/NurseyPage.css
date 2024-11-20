@@ -208,10 +208,10 @@ body {
 }
 
 /* Filter panel initially hidden with zero height */
-.filter-panel {
+.filter-panel { 
     display: block;
     position: absolute;
-    top: 200px;
+    top: 1493px;   
     right: 50px;
     width: 300px;
     padding: 20px;
@@ -551,4 +551,146 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* General container styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 30px; 
+    background-color: #f1e9d79f; 
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+    margin-bottom: 15px;
+}
+
+.container img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 2000px;
+}
+
+/* Styling for each counter box */
+.counter {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    width: 200px; 
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start position off-screen */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+    margin-bottom: 15px;
+}
+
+/* Animation when the counter comes into view */
+.counter.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Slide up to its final position */
+}
+
+/* Styling for the heading (question) in the counter box */
+.counter h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333; 
+    margin-bottom: 15px;
+}
+
+/* Styling for the number in the counter box */
+.counter .number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007bff; /* Blue color for the numbers */
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+/* Change number color on hover */
+.counter:hover .number {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+/* Styling for the inquiry box */
+.inquiry-box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 120px;
+    border: 10px solid #ccc;
+    border-radius: 80px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.inquiry-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+/* Styling for each question */
+.question {
+    padding: 15px;
+    background-color: #79a3d1;
+    color: rgb(69, 49, 49);
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.question:hover {
+    background-color: #779ec7;
+}
+
+/* Styling for the answer */
+.answer {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #333;
+    font-size: 19px;
+    display: none; /* Hidden by default */
+}
+
+/* Optional: Add spacing between question-answer pairs */
+.question-answer {  
+    margin-bottom: 15px;
+}
+    
+.nurseryDescText {
+    text-align: left;
+    color: #fff;
+    padding: 30px;
+    margin: 0;
+    position: absolute;
+    top:37%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+.nurseryDescText h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+}
+
+.nurseryDescText p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
 }
