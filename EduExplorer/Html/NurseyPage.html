@@ -32,8 +32,9 @@
             <li><a href="MakingOfPage.html">MakingOf</a></li>
         </ul>
         <div class="icons">
-            <a href="#"><i><img src="../image//NurseryImages/user-interface.png" alt="user-interface"></i></a>
-
+            <a href="#" id="showRegistration"><i><img src="../image/NurseryImages/user-interface.png"
+                        alt="user-interface" /></i></a>
+            <div id="userName" style="display: inline"></div>
         </div>
     </nav>
 
@@ -133,6 +134,17 @@
         </div>
     </div>
 
+    <div id="registrationForm" style="display: none;">
+        <form>
+            <h1>Enter your details!</h1>
+            <input type="text" id="firstName" placeholder="First Name (3 letters at least)">
+            <input type="text" id="lastName" placeholder="Last Name (3 letters at least)">
+            <input type="email" id="email" placeholder="Email (Should include @ sign)">
+            <input type="tel" id="phoneNumber" placeholder="Phone Number (Exactly 8 digits)">
+            <button type="submit" id="submitButton">Register</button>
+            <div id="message"></div>
+        </form>
+    </div>
 
 </body>
 

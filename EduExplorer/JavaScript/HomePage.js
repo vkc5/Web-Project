@@ -50,8 +50,10 @@ window.onload = changeBackgroundImage;
 document.addEventListener("DOMContentLoaded", function () {
   const showRegistration = document.getElementById("showRegistration");
   const registrationForm = document.getElementById("registrationForm");
-  const form = document.getElementById("registrationForm");
+  //const form = document.getElementById("registrationForm");
   const messageDiv = document.getElementById("message");
+  const submitButton = registrationForm.querySelector('button[type="submit"]');
+  const userNameElement = document.getElementById("userName");
 
   showRegistration.addEventListener("click", function (event) {
     event.preventDefault();
@@ -59,7 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
       registrationForm.style.display === "none" ? "block" : "none";
   });
 
-  form.addEventListener("submit", function (event) {
+  // Input field validation
+  const inputFields = registrationForm.querySelectorAll(
+    'input[type="text"], input[type="tel"], input[type="email"]'
+  );
+  inputFields.forEach((field) => {
+    field.addEventListener("input", function () {
+      validateField(this);
+      checkFormValidity();
+    });
+  });
+
+  registrationForm.addEventListener("submit", function (event) {
     event.preventDefault();
     messageDiv.textContent = "";
 
@@ -68,62 +81,95 @@ document.addEventListener("DOMContentLoaded", function () {
     var phoneNumber = document.getElementById("phoneNumber").value;
     var email = document.getElementById("email").value;
 
-    // Validation
-    let isValid = true;
-    if (firstName.length < 3 || lastName.length < 3) {
-      isValid = false;
-      messageDiv.textContent +=
-        "First Name and Last Name must have at least 3 characters.\n";
-      submitButton.style.backgroundColor = "red";
-    }
-    if (phoneNumber.length !== 8 || !/^\d+$/.test(phoneNumber)) {
-      isValid = false;
-      messageDiv.textContent += "Phone number must contain exactly 8 digits.\n";
-      submitButton.style.backgroundColor = "red";
-    }
-
-    //Handle Email Validation
-    if (email === "" || !email.includes("@")) {
-      isValid = false;
-      messageDiv.textContent += "Please enter a valid email address.\n";
-      submitButton.style.backgroundColor = "red";
-    }
-
-    // Submission
-    if (isValid) {
+    if (checkFormValidity()) {
       messageDiv.textContent = "Registration successful!";
-      const submitButton = form.querySelector('button[type="submit"]');
       submitButton.style.backgroundColor = "lightgreen";
       messageDiv.style.color = "darkgreen";
-      // Form submitted successfully
-      displayUserName(firstName, lastName);
 
-      // Store user's name in local storage
-      localStorage.setItem("firstName", firstName);
-      localStorage.setItem("lastName", lastName);
-
-      // Disable form fields after successful registration
-      disableFormFields(form);
+      handleRegistrationSuccess(firstName, lastName);
     } else {
       messageDiv.style.color = "red";
     }
+    // Remove the form
+    var formContainer = document.getElementById("registrationForm");
+    formContainer.style.display = "none";
+
+    // Remove the icon
+    var getStartedButton = document.getElementById("showRegistration");
+    if (getStartedButton) {
+      getStartedButton.style.display = "none";
+    }
   });
+
+  function validateField(field) {
+    const isValid = validateInput(field);
+    field.style.backgroundColor = isValid ? "white" : "lightcoral";
+  }
+
+  function validateInput(field) {
+    const id = field.id;
+    const value = field.value;
+    let isValid = true;
+
+    switch (id) {
+      case "firstName":
+      case "lastName":
+        if (value.length < 3) {
+          isValid = false;
+        }
+        break;
+      case "phoneNumber":
+        if (value.length !== 8 || !/^\d+$/.test(value)) {
+          isValid = false;
+        }
+        break;
+      case "email":
+        if (value === "" || !value.includes("@")) {
+          isValid = false;
+        }
+        break;
+    }
+    return isValid;
+  }
+
+  function checkFormValidity() {
+    const allValid = Array.from(inputFields).every(validateInput);
+    submitButton.disabled = !allValid;
+    submitButton.style.backgroundColor = allValid ? "lightgreen" : "grey";
+    return allValid;
+  }
+
+  // Call checkExistingUser() on page load
+  checkExistingUser();
 });
 
 function displayUserName(firstName, lastName) {
   var userNameElement = document.getElementById("userName");
-  userNameElement.textContent = `Welcome, Explorer ${firstName} ${lastName}!`;
+  userNameElement.innerHTML = `Welcome, Explorer ${firstName} ${lastName}!`;
   userNameElement.style.display = "inline";
 }
 
+// Function to handle registration success and display welcome message
+function handleRegistrationSuccess(firstName, lastName) {
+  // Store user's name in local storage
+  sessionStorage.setItem("firstName", firstName);
+  sessionStorage.setItem("lastName", lastName);
 
-function disableFormFields(form) {
-  const inputFields = form.querySelectorAll("input, select, textarea"); //select all form elements
-  inputFields.forEach((field) => {
-    field.disabled = true;
-  });
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.disabled = true; // Disable the submit button
+  // Display the welcome message
+  displayUserName(firstName, lastName);
+
+  // Hide the registration form and icon
+  registrationForm.style.display = "none";
+  showRegistration.style.display = "none";
+}
+
+// Function to check for existing user and display welcome message on page load
+function checkExistingUser() {
+  const firstName = sessionStorage.getItem("firstName");
+  const lastName = sessionStorage.getItem("lastName");
+  if (firstName && lastName) {
+    handleRegistrationSuccess(firstName, lastName); // Reuse the function
+  }
 }
 
 
