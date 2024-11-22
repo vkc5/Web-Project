@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function displayUserName(firstName, lastName) {
   var userNameElement = document.getElementById("userName");
-  userNameElement.innerHTML = `Welcome, Explorer ${firstName} ${lastName}!`;
+  userNameElement.innerHTML = `Welcome, ${firstName} ${lastName}!`;
   userNameElement.style.display = "inline";
 }
 
