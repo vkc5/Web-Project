@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <script src="../JavaScript/SchoolPage.js"></script>
     <nav class="menu-bar">
         <div class="logo">
             <a href="HomePage.html"><img src="../image/SchoolPageImages/edu.png" alt="Edu Explorer Logo"></a>
@@ -52,12 +51,14 @@
                     <a href="#" class="read-more" data-info="Noor">Read More</a>
                 </div>
                 <div class="School-item">
-                    <img src="../image/SchoolPageImages/Al-Hidd Intermediate Primary Boys.jpg" alt="Al-Hidd Intermediate Primary School">
+                    <img src="../image/SchoolPageImages/Al-Hidd Intermediate Primary Boys.jpg"
+                        alt="Al-Hidd Intermediate Primary School">
                     <h3>Al-Hidd Intermediate School</h3>
                     <a href="#" class="read-more" data-info="Hidd">Read More</a>
                 </div>
                 <div class="School-item">
-                    <img src="../image/SchoolPageImages/Ibn Kuldoon National School.jpg" alt="Ibn Kuldoon National School">
+                    <img src="../image/SchoolPageImages/Ibn Kuldoon National School.jpg"
+                        alt="Ibn Kuldoon National School">
                     <h3>Ibn Kuldoon National School</h3>
                     <a href="#" class="read-more" data-info="Kuldoon">Read More</a>
                 </div>
@@ -67,12 +68,14 @@
                     <a href="#" class="read-more" data-info="Philippine">Read More</a>
                 </div>
                 <div class="School-item">
-                    <img src="../image/SchoolPageImages/Qurtoba Intermediate Girls.jpg" alt="Qurtoba Intermediate School">
+                    <img src="../image/SchoolPageImages/Qurtoba Intermediate Girls.jpg"
+                        alt="Qurtoba Intermediate School">
                     <h3>Qurtoba Intermediate School</h3>
                     <a href="#" class="read-more" data-info="Qurtoba">Read More</a>
                 </div>
                 <div class="School-item">
-                    <img src="../image/SchoolPageImages/Um Kalthoom Intermediate Girls.jpg" alt="Um Kalthoom Intermediate School">
+                    <img src="../image/SchoolPageImages/Um Kalthoom Intermediate Girls.jpg"
+                        alt="Um Kalthoom Intermediate School">
                     <h3>Um Kalthoom Intermediate School</h3>
                     <a href="#" class="read-more" data-info="Kalthoom">Read More</a>
                 </div>
@@ -105,7 +108,7 @@
         <div id="feedback-error" class="feedback-error">Please provide a rating or feedback before submitting.</div>
         <button id="submit-feedback" class="rate-me-button">Submit</button>
     </div>
-        
+
     <div id="thank-you-message">Thanks for your feedback!</div>
 
     <div id="filter-panel" class="filter-panel">
@@ -124,7 +127,7 @@
             <div class="circle-group">
                 <input type="radio" id="public" name="type" value="Public">
                 <label for="public">Public</label>
-                
+
                 <input type="radio" id="private" name="type" value="Private">
                 <label for="private">Private</label>
             </div>
@@ -133,7 +136,7 @@
             <button id="reset-filters">Reset Filters</button>
         </div>
     </div>
-    
+
     <div id="registrationForm" style="display: none;">
         <form>
             <h1>Enter your details!</h1>
@@ -146,6 +149,78 @@
         </form>
     </div>
 
+    <div class="faq-container">
+        <h1>FAQ for K-12</h1>
+        <div class="faq-options">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('enrollment')">
+                    <span>How can I apply for enrollment?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="enrollment">
+                    Enrollment can be initiated by filling out an application form on the school's website or contacting
+                    the
+                    admissions office for more information.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('gifted')">
+                    <span>Are there any special programs for gifted students?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="gifted">
+                    Yes, all schools have programs designed for gifted and talented students, including advanced classes
+                    and
+                    enrichment activities.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('curriculum')">
+                    <span>What do most schools' curriculum include?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="curriculum">
+                    Most school curriculums include a mix of core subjects (Math, Science, English, Social Studies) and
+                    electives (Art, Music, Physical Education).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('homework')">
+                    <span>What is the policy on homework?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="homework">
+                    Homework is assigned regularly to reinforce learning, with guidelines provided for each grade level.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('support')">
+                    <span>What resources are available for academic support?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="support">
+                    Most schools offer tutoring, homework help, and access to learning resources through their library
+                    and
+                    online platforms.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <img src="../image/MakingOfimage/instagram.png" alt="Instagram">
+            <img src="../image/MakingOfimage/social-media.png" alt="Twitter">
+            <img src="../image/MakingOfimage/linkedin.png" alt="LinkedIn">
+        </div>
+        <p>&copy; 2024 Edu Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="../JavaScript/SchoolPage.js"></script>
 </body>
 
 </html>

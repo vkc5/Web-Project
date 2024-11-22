@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <script src="../JavaScript/UniversityPage.js"></script>
     <nav class="menu-bar">
         <div class="logo">
             <a href="HomePage.html"><img src="../image/UniversityImages/edu.png" alt="Edu Explorer Logo"></a>
@@ -105,7 +104,7 @@
         <div id="feedback-error" class="feedback-error">Please provide a rating or feedback before submitting.</div>
         <button id="submit-feedback" class="rate-me-button">Submit</button>
     </div>
-    
+
     <div id="thank-you-message">Thanks for your feedback!</div>
 
     <div id="filter-panel" class="filter-panel">
@@ -124,7 +123,7 @@
             <div class="circle-group">
                 <input type="radio" id="public" name="type" value="Public">
                 <label for="public">Public</label>
-                
+
                 <input type="radio" id="private" name="type" value="Private">
                 <label for="private">Private</label>
             </div>
@@ -146,6 +145,79 @@
         </form>
     </div>
 
+    <div class="faq-container">
+        <h1>FAQ for Colleges</h1>
+        <div class="faq-options">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('financial-aid')">
+                    <span>Are there scholarship and financial aid options available?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="financial-aid">
+                    Yes, most colleges offer various scholarships and financial aid options, including need-based aid,
+                    merit
+                    scholarships, and work-study programs.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('academic-support')">
+                    <span>What resources are available for academic support?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="academic-support">
+                    The majority of colleges provide a range of academic support services, including tutoring, writing
+                    centers, and academic advising.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('diversity-inclusion')">
+                    <span>How does the college support diversity and inclusion?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="diversity-inclusion">
+                    All colleges are committed to fostering a diverse and inclusive environment through various
+                    programs,
+                    support services, and initiatives aimed at promoting equity.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('study-abroad')">
+                    <span>Are there opportunities for studying abroad?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="study-abroad">
+                    Yes, most colleges offer various study abroad programs that allow students to gain international
+                    experience and earn academic credit.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer('programs-degrees')">
+                    <span>What programs and degrees do most colleges offer?</span>
+                    <i class="dropdown-arrow"></i>
+                </div>
+                <div class="faq-answer" id="programs-degrees">
+                    They offer a wide range of undergraduate and graduate programs across various fields, including
+                    Arts,
+                    Sciences, Business, Engineering, and Health Sciences.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <img src="../image/MakingOfimage/instagram.png" alt="Instagram">
+            <img src="../image/MakingOfimage/social-media.png" alt="Twitter">
+            <img src="../image/MakingOfimage/linkedin.png" alt="LinkedIn">
+        </div>
+        <p>&copy; 2024 Edu Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="../JavaScript/UniversityPage.js"></script>
 </body>
 
 </html>

@@ -11,9 +11,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     color: #fff;
     padding: 20px 20px;
+    text-align: center;
     position: relative;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */

@@ -456,3 +456,20 @@ function startCounting(counterElement) {
         }
     }, 16);
 }
+
+function toggleAnswer(id) {
+    const answer = document.getElementById(id);
+    const question = answer.previousElementSibling;
+
+    // Toggle the display of the answer
+    answer.classList.toggle("show");
+    question.classList.toggle("active");
+
+    // Rotate the dropdown arrow
+    const arrow = question.querySelector(".dropdown-arrow");
+    if (answer.classList.contains("show")) {
+        arrow.style.transform = "rotate(-135deg)";
+    } else {
+        arrow.style.transform = "rotate(45deg)";
+    }
+}

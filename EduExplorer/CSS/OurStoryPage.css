@@ -314,21 +314,10 @@ h1 {
     line-height: 1.6;
 }
 
-/* Custom Line */
-.custom-line {
-    border: none;
-    height: 3px;
-    background-color: #cccccc;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
 /* Social Media Styles */
 .social-media {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
     background-color: #e9e9e9;
     padding: 10px;
     border-radius: 5px;
@@ -343,17 +332,6 @@ h1 {
 
 .social-media img:hover {
     transform: scale(1.1);
-}
-
-/* Credits Styles */
-.credits {
-    text-align: center;
-    margin: 20px;
-    color: #555;
-}
-
-.credits p {
-    margin: 5px 0;
 }
 
 /* Footer Styles */
