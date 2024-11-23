@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #000000;
+    color: #fff;
     padding: 20px 20px;
     position: relative;
     width: 100%;
@@ -52,7 +52,7 @@ body {
     display: flex;
     font-size: 0.8em;
     font-weight: bold;
-    color: #000000;
+    color: #fff;
     line-height: 1;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 .menu li a {
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     font-size: 1.3em;
     padding: 10px;
@@ -630,7 +630,7 @@ body {
   /* Keyframes for the floating animation */
   @keyframes floatUp {
     0% {
-      bottom: 500px;
+      bottom: 300px;
       opacity: 0; /* Invisible */
     }
     50% {
@@ -641,7 +641,7 @@ body {
       opacity: 1;
     }
   }
-
+  
 .nurseryDescText h1 {
     font-size: 4.5em;
     margin-bottom: 20px;
