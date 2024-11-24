@@ -19,6 +19,7 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
+    z-index: 9999; 
 }
 #background {
     background-image: url('../image/NurseryImages/nurseryimage.png'); /* Path to your background image */
