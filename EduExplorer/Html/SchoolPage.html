@@ -10,32 +10,62 @@
 </head>
 
 <body>
-    <nav class="menu-bar">
-        <div class="logo">
-            <a href="HomePage.html"><img src="../image/SchoolPageImages/edu.png" alt="Edu Explorer Logo"></a>
-            <div class="logo-text"><br>
-                <span class="edu"> Edu <br> Explorer</span><br>
+    <div id="background">
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="HomePage.html"><img src="../image/SchoolPageImages/edu.png" alt="Edu Explorer Logo"></a>
+                <div class="logo-text"><br>
+                    <span class="edu"> Edu <br> Explorer</span><br>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="HomePage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Levels <i class="fas fa-caret-down caret-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="NurseyPage.html">Nursey</a></li>
+                        <li><a href="SchoolPage.html">K-12</a></li>
+                        <li><a href="UniversityPage.html">Colleges</a></li>
+                    </ul>
+                </li>
+                <li><a href="OurStoryPage.html">About Us</a></li>
+                <li><a href="MakingOfPage.html">MakingOf</a></li>
+            </ul>
+            <div class="icons">
+                <a href="#" id="showRegistration"><i><img src="../image/SchoolPageImages/user-interface.png"
+                            alt="user-interface" /></i></a>
+                <div id="userName" style="display: inline"></div>
+            </div>
+        </nav>
+
+        <div id="descAndStat" class="container">
+            <div class="nurseryDescText">
+                <h1>Welcome to Schools Page</h1>
+                <p>
+                    Schools in Bahrain cater to students aged 4 to 18 years, offering bilingual education and various
+                    curricula such as British, American, IB, and Bahraini National programs. They focus on academic
+                    excellence, skill development, and character building through engaging learning environments,
+                    extracurricular activities, and modern facilities.
+                </p>
             </div>
         </div>
-        <ul class="menu">
-            <li><a href="HomePage.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Levels <i class="fas fa-caret-down caret-icon"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="NurseyPage.html">Nursey</a></li>
-                    <li><a href="SchoolPage.html">K-12</a></li>
-                    <li><a href="UniversityPage.html">Colleges</a></li>
-                </ul>
-            </li>
-            <li><a href="OurStoryPage.html">About Us</a></li>
-            <li><a href="MakingOfPage.html">MakingOf</a></li>
-        </ul>
-        <div class="icons">
-            <a href="#" id="showRegistration"><i><img src="../image/SchoolPageImages/user-interface.png"
-                        alt="user-interface" /></i></a>
-            <div id="userName" style="display: inline"></div>
+    </div>
+
+    <div class="container">
+        <h1>School journey in numbers</h1>
+        <div class="counter">
+            <div class="number" data-target="3000">0</div>
+            <h3>Students</h3>
         </div>
-    </nav>
+        <div class="counter">
+            <div class="number" data-target="120">0</div>
+            <h3>Schools</h3>
+        </div>
+        <div class="counter">
+            <div class="number" data-target="20">0</div>
+            <h3>Average students/class</h3>
+        </div>
+    </div>
 
     <div class="School-section-container">
         <div class="School-section">
@@ -147,68 +177,6 @@
             <button type="submit" id="submitButton">Register</button>
             <div id="message"></div>
         </form>
-    </div>
-
-    <div class="faq-container">
-        <h1>FAQ for K-12</h1>
-        <div class="faq-options">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('enrollment')">
-                    <span>How can I apply for enrollment?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="enrollment">
-                    Enrollment can be initiated by filling out an application form on the school's website or contacting
-                    the
-                    admissions office for more information.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('gifted')">
-                    <span>Are there any special programs for gifted students?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="gifted">
-                    Yes, all schools have programs designed for gifted and talented students, including advanced classes
-                    and
-                    enrichment activities.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('curriculum')">
-                    <span>What do most schools' curriculum include?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="curriculum">
-                    Most school curriculums include a mix of core subjects (Math, Science, English, Social Studies) and
-                    electives (Art, Music, Physical Education).
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('homework')">
-                    <span>What is the policy on homework?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="homework">
-                    Homework is assigned regularly to reinforce learning, with guidelines provided for each grade level.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('support')">
-                    <span>What resources are available for academic support?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="support">
-                    Most schools offer tutoring, homework help, and access to learning resources through their library
-                    and
-                    online platforms.
-                </div>
-            </div>
-        </div>
     </div>
 
     <footer>

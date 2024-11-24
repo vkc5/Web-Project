@@ -10,32 +10,62 @@
 </head>
 
 <body>
-    <nav class="menu-bar">
-        <div class="logo">
-            <a href="HomePage.html"><img src="../image/UniversityImages/edu.png" alt="Edu Explorer Logo"></a>
-            <div class="logo-text"><br>
-                <span class="edu"> Edu <br> Explorer</span><br>
+    <div id="background">
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="HomePage.html"><img src="../image/UniversityImages/edu.png" alt="Edu Explorer Logo"></a>
+                <div class="logo-text"><br>
+                    <span class="edu"> Edu <br> Explorer</span><br>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="HomePage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Levels <i class="fas fa-caret-down caret-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="NurseyPage.html">Nursey</a></li>
+                        <li><a href="SchoolPage.html">K-12</a></li>
+                        <li><a href="UniversityPage.html">Colleges</a></li>
+                    </ul>
+                </li>
+                <li><a href="OurStoryPage.html">About Us</a></li>
+                <li><a href="MakingOfPage.html">MakingOf</a></li>
+            </ul>
+            <div class="icons">
+                <a href="#" id="showRegistration"><i><img src="../image/UniversityImages/user-interface.png"
+                            alt="user-interface" /></i></a>
+                <div id="userName" style="display: inline"></div>
+            </div>
+        </nav>
+        <div id="descAndStat" class="container">
+            <div class="nurseryDescText">
+                <h1>Welcome to College Page</h1>
+                <p>
+                    Colleges in Bahrain provide higher education for diplomas, bachelor's, and postgraduate degrees.
+                    They offer programs in fields like engineering, business, arts, and technology with bilingual or
+                    specialized instruction. Colleges focus on academic excellence, research, and practical skills to
+                    prepare students for global careers.
+                </p>
             </div>
         </div>
-        <ul class="menu">
-            <li><a href="HomePage.html">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Levels <i class="fas fa-caret-down caret-icon"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="NurseyPage.html">Nursey</a></li>
-                    <li><a href="SchoolPage.html">K-12</a></li>
-                    <li><a href="UniversityPage.html">Colleges</a></li>
-                </ul>
-            </li>
-            <li><a href="OurStoryPage.html">About Us</a></li>
-            <li><a href="MakingOfPage.html">MakingOf</a></li>
-        </ul>
-        <div class="icons">
-            <a href="#" id="showRegistration"><i><img src="../image/UniversityImages/user-interface.png"
-                        alt="user-interface" /></i></a>
-            <div id="userName" style="display: inline"></div>
+    </div>
+
+
+    <div class="container">
+        <h1>college journey in numbers</h1>
+        <div class="counter">
+            <div class="number" data-target="30000">0</div>
+            <h3>Students</h3>
         </div>
-    </nav>
+        <div class="counter">
+            <div class="number" data-target="100">0</div>
+            <h3>colleges</h3>
+        </div>
+        <div class="counter">
+            <div class="number" data-target="25">0</div>
+            <h3>Average students/class</h3>
+        </div>
+    </div>
 
     <div class="college-section-container">
         <div class="college-section">
@@ -143,69 +173,6 @@
             <button type="submit" id="submitButton">Register</button>
             <div id="message"></div>
         </form>
-    </div>
-
-    <div class="faq-container">
-        <h1>FAQ for Colleges</h1>
-        <div class="faq-options">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('financial-aid')">
-                    <span>Are there scholarship and financial aid options available?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="financial-aid">
-                    Yes, most colleges offer various scholarships and financial aid options, including need-based aid,
-                    merit
-                    scholarships, and work-study programs.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('academic-support')">
-                    <span>What resources are available for academic support?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="academic-support">
-                    The majority of colleges provide a range of academic support services, including tutoring, writing
-                    centers, and academic advising.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('diversity-inclusion')">
-                    <span>How does the college support diversity and inclusion?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="diversity-inclusion">
-                    All colleges are committed to fostering a diverse and inclusive environment through various
-                    programs,
-                    support services, and initiatives aimed at promoting equity.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('study-abroad')">
-                    <span>Are there opportunities for studying abroad?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="study-abroad">
-                    Yes, most colleges offer various study abroad programs that allow students to gain international
-                    experience and earn academic credit.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleAnswer('programs-degrees')">
-                    <span>What programs and degrees do most colleges offer?</span>
-                    <i class="dropdown-arrow"></i>
-                </div>
-                <div class="faq-answer" id="programs-degrees">
-                    They offer a wide range of undergraduate and graduate programs across various fields, including
-                    Arts,
-                    Sciences, Business, Engineering, and Health Sciences.
-                </div>
-            </div>
-        </div>
     </div>
 
     <footer>

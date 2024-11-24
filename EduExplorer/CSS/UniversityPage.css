@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #000000;
+    color: #fff;
     padding: 20px 20px;
     position: relative;
     width: 100%;
@@ -19,6 +19,16 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
+}
+#background {
+    background-image: url('../image/UniversityImages/College.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling of the image */
+    width: 100%; /* Make the div take the full width of the viewport */
+    min-height: 100%; /* Ensures it covers the full viewport height */
+    display: flex;
+    flex-direction: column; /* Aligns children vertically */
 }
 
 .college-section-container {
@@ -42,7 +52,7 @@ body {
     display: flex;
     font-size: 0.8em;
     font-weight: bold;
-    color: #000000;
+    color: #fff;
     line-height: 1;
 }
 
@@ -63,7 +73,7 @@ body {
 }
 
 .menu li a {
-    color: #000000;
+    color: #fff;
     text-decoration: none;
     font-size: 1.3em;
     padding: 10px;
@@ -210,7 +220,7 @@ body {
 .filter-panel {
     display: block;
     position: absolute;
-    top: 200px;
+    top: 1352px;
     right: 50px;
     width: 300px;
     padding: 20px;
@@ -552,101 +562,95 @@ body {
     cursor: pointer;
 }
 
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-}
-
-.faq-container h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #0073e6;
-}
-
-.faq-options {
-    border-radius: 10px;
-   /* background: #f9f9f9;*/
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.faq-item {
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
-
-.faq-item:last-child {
-    border-bottom: none;
-}
-
-.faq-question {
+/* General container styling */
+.container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1rem;
+    justify-content: center;
+    align-items: center; 
+    gap: 30px; 
+    background-color: #f1e9d79f; 
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+    margin-bottom: 15px;
+}
+
+/* Styling for each counter box */
+.counter {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    width: 200px; 
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start position off-screen */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+/* Animation when the counter comes into view */
+.counter.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Slide up to its final position */
+}
+
+/* Styling for the heading (question) in the counter box */
+.counter h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333; 
+    margin-bottom: 15px;
+}
+
+/* Styling for the number in the counter box */
+.counter .number {
+    font-size: 2.5em;
     font-weight: bold;
-    color: #333;
-    transition: color 0.3s;
+    color: #007bff; /* Blue color for the numbers */
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
 }
 
-.faq-question:hover {
-    color: #0073e6;
+/* Change number color on hover */
+.counter:hover .number {
+    color: #0056b3; /* Darker blue on hover */
 }
-
-.dropdown-arrow {
-    border: solid #0073e6;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 5px;
-    transform: rotate(45deg);
-    transition: transform 0.3s;
-}
-
-.faq-question.active .dropdown-arrow {
-    transform: rotate(-135deg);
-}
-
-.faq-answer {
-    margin-top: 10px;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #555;
-    display: none;
-}
-
-.faq-answer.show {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+    
+.nurseryDescText {
+    text-align: left;
+    color: #fff;
+    padding: 30px;
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    animation: floatUp 2s ease-in-out forwards;
+  }
+  
+  /* Keyframes for the floating animation */
+  @keyframes floatUp {
+    0% {
+      bottom: 300px;
+      opacity: 0; /* Invisible */
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    50% {
+      opacity: 1;
     }
+    100% {
+      bottom: 900px; /* Stop at this position */
+      opacity: 1;
+    }
+  }
+  
+.nurseryDescText h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .faq-container {
-        padding: 10px;
-    }
-
-    .faq-question {
-        font-size: 0.9rem;
-    }
-
-    .faq-answer {
-        font-size: 0.85rem;
-    }
+.nurseryDescText p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
 }
 
 /* Social Media Styles */
