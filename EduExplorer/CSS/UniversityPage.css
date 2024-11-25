@@ -7,6 +7,7 @@ body {
     width: 1920px;
     height: 1080px;
 }
+
 .menu-bar {
     display: flex;
     align-items: center;
@@ -17,26 +18,37 @@ body {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
-    z-index: 9999; 
+    backdrop-filter: blur(4px);
+    /* Apply blur effect to the navbar background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Adds a shadow to the navigation bar */
 }
+
 #background {
-    background-image: url('../image/UniversityImages/College.jpg'); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling of the image */
-    width: 100%; /* Make the div take the full width of the viewport */
-    min-height: 100%; /* Ensures it covers the full viewport height */
+    background-image: url('../image/UniversityImages/College.jpg');
+    /* Path to your background image */
+    background-size: cover;
+    /* Ensures the image covers the entire area */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents tiling of the image */
+    width: 100%;
+    /* Make the div take the full width of the viewport */
+    min-height: 100%;
+    /* Ensures it covers the full viewport height */
     display: flex;
-    flex-direction: column; /* Aligns children vertically */
+    flex-direction: column;
+    /* Aligns children vertically */
 }
 
 .college-section-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh -100px); /* Leaves space for the navbar */
+    min-height: calc(100vh -100px);
+    margin-bottom: 40px;
+    /* Leaves space for the navbar */
 }
 
 .logo {
@@ -78,8 +90,10 @@ body {
     text-decoration: none;
     font-size: 1.3em;
     padding: 10px;
-    transition: color 0.3s, transform 0.3s; /* Add transition for color and transform */
+    transition: color 0.3s, transform 0.3s;
+    /* Add transition for color and transform */
 }
+
 .menu a::after {
     content: '';
     position: absolute;
@@ -92,11 +106,15 @@ body {
 }
 
 .menu li a:hover {
-    color: #ffcc00; /* Change color on hover */
-    transform: scale(1.1); /* Slightly enlarge the link on hover */
+    color: #ffcc00;
+    /* Change color on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge the link on hover */
 }
+
 .menu a:hover::after {
-    width: 100%; /* Animate underline on hover */
+    width: 100%;
+    /* Animate underline on hover */
 }
 
 /* Dropdown container */
@@ -106,7 +124,8 @@ body {
 
 .dropdown-menu {
     text-align: left;
-    display: none; /* Initially hidden */
+    display: none;
+    /* Initially hidden */
     position: absolute;
     top: 40px;
     left: 0;
@@ -126,11 +145,13 @@ body {
 }
 
 .dropdown.open .caret-icon {
-    transform: rotate(180deg); /* Rotate caret when dropdown is open */
+    transform: rotate(180deg);
+    /* Rotate caret when dropdown is open */
 }
 
 .dropdown.open .dropdown-menu {
-    display: block; /* Show dropdown menu when dropdown is open */
+    display: block;
+    /* Show dropdown menu when dropdown is open */
 }
 
 .dropdown-menu li a {
@@ -161,7 +182,8 @@ body {
 }
 
 .dropdown-menu a:hover::after {
-    width: 100%; /* Animate underline on hover */
+    width: 100%;
+    /* Animate underline on hover */
 }
 
 .icons {
@@ -186,11 +208,11 @@ body {
 
 .college-section {
     text-align: center;
-    width:56%;
+    width: 56%;
     /* background-color: #ffffff;
     position: relative;
     */
-   /* border-radius: 10px;
+    /* border-radius: 10px;
     padding: 20px;
     padding-left: 60px;
     padding-bottom: 60px;
@@ -208,7 +230,7 @@ body {
 .header h2 {
     font-size: 2em;
     color: #333;
-   /* font-style: italic;*/
+    /* font-style: italic;*/
 }
 
 .filter-icon {
@@ -225,20 +247,27 @@ body {
     right: 50px;
     width: 300px;
     padding: 20px;
-    background-color: #f1e9d79f; /* Light background color */
+    background-color: #f1e9d79f;
+    /* Light background color */
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    height: 0; /* Initially collapsed */
-    overflow: hidden; /* Prevents content from spilling out */
-    opacity: 0; /* Initially invisible */
-    transition: height 0.3s ease, opacity 0.3s ease; /* Smooth height and opacity transition */
+    height: 0;
+    /* Initially collapsed */
+    overflow: hidden;
+    /* Prevents content from spilling out */
+    opacity: 0;
+    /* Initially invisible */
+    transition: height 0.3s ease, opacity 0.3s ease;
+    /* Smooth height and opacity transition */
 }
 
 /* When the panel is open */
 .filter-panel.open {
-    height: 240px; /* Set a height when the panel is open */
-    opacity: 1; /* Fully visible */
+    height: 240px;
+    /* Set a height when the panel is open */
+    opacity: 1;
+    /* Fully visible */
 }
 
 .filter-options label {
@@ -281,6 +310,7 @@ body {
 #apply-filters:hover {
     background-color: #333;
 }
+
 #reset-filters {
     display: inline-block;
     padding: 6px 20px;
@@ -296,13 +326,15 @@ body {
 }
 
 .popup-modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    top: 0; 
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000; /* Make sure it's on top of other elements */
+    z-index: 1000;
+    /* Make sure it's on top of other elements */
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -333,6 +365,7 @@ body {
     from {
         transform: translateY(-30px);
     }
+
     to {
         transform: translateY(0);
     }
@@ -342,13 +375,15 @@ body {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-100%);
     }
 }
 
 .popup-modal.move-left {
-    transform: translateX(-20%); /* Moves the card 50% to the left */
+    transform: translateX(-20%);
+    /* Moves the card 50% to the left */
     transition: transform 0.5s ease;
 }
 
@@ -411,7 +446,8 @@ body {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Smooth transition */
     margin-right: 0px;
 }
 
@@ -450,7 +486,8 @@ body {
     display: none;
     position: fixed;
     top: 50%;
-    left: calc(50% + 80px); /* Appears 20px to the right of the moved card */
+    left: calc(50% + 80px);
+    /* Appears 20px to the right of the moved card */
     transform: translateY(-50%);
     background-color: #fff;
     padding: 20px;
@@ -461,6 +498,7 @@ body {
     z-index: 1001;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .rating-modal.show {
     display: block;
     opacity: 1;
@@ -520,7 +558,7 @@ body {
     display: none;
 }
 
-.college-grid:has(.college-item:hover) .college-item:not(:hover){
+.college-grid:has(.college-item:hover) .college-item:not(:hover) {
     filter: blur(1.5px);
 }
 
@@ -529,19 +567,19 @@ body {
     top: 100px;
     right: 20px;
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 30px; 
+    padding: 30px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 10px;
-    width: 400px; 
-    min-height: 300px; 
+    width: 400px;
+    min-height: 300px;
 }
 
 #registrationForm form {
-    display: flex; 
-    flex-direction: column; 
-    gap: 10px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
 }
 
@@ -550,13 +588,13 @@ body {
     padding: 15px 20px;
     border: 1px solid #ccc;
     border-radius: 50px;
-    font-size: 20px; 
-    width: calc(100% - 40px); 
-    box-sizing: border-box; 
+    font-size: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
 }
 
-#registrationForm button[type="submit"]{
-    background-color:rgb(171, 171, 171);
+#registrationForm button[type="submit"] {
+    background-color: rgb(171, 171, 171);
     width: calc(100% - 50%);
     font-size: 18px;
     font-weight: bold;
@@ -567,10 +605,11 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    gap: 30px; 
-    background-color: #f1e9d79f; 
-    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+    align-items: center;
+    gap: 30px;
+    background-color: #f1e9d79f;
+    flex-wrap: wrap;
+    /* Ensure elements wrap on smaller screens */
     margin-bottom: 15px;
 }
 
@@ -578,28 +617,33 @@ body {
 .counter {
     text-align: center;
     background-color: white;
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    padding: 20px; 
-    width: 200px; 
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Start position off-screen */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(50px);
+    /* Start position off-screen */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    /* Smooth transition */
     margin-bottom: 15px;
     margin-top: 15px;
 }
 
 /* Animation when the counter comes into view */
 .counter.visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Slide up to its final position */
+    opacity: 1;
+    /* Make visible */
+    transform: translateY(0);
+    /* Slide up to its final position */
 }
 
 /* Styling for the heading (question) in the counter box */
 .counter h3 {
     margin-top: 0;
     font-size: 1.2em;
-    color: #333; 
+    color: #333;
     margin-bottom: 15px;
 }
 
@@ -607,16 +651,18 @@ body {
 .counter .number {
     font-size: 2.5em;
     font-weight: bold;
-    color: #007bff; /* Blue color for the numbers */
+    color: #007bff;
+    /* Blue color for the numbers */
     margin-bottom: 5px;
     transition: color 0.3s ease;
 }
 
 /* Change number color on hover */
 .counter:hover .number {
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3;
+    /* Darker blue on hover */
 }
-    
+
 .nurseryDescText {
     text-align: left;
     color: #fff;
@@ -627,23 +673,27 @@ body {
     left: 35%;
     transform: translate(-50%, -50%);
     animation: floatUp 2s ease-in-out forwards;
-  }
-  
-  /* Keyframes for the floating animation */
-  @keyframes floatUp {
+}
+
+/* Keyframes for the floating animation */
+@keyframes floatUp {
     0% {
-      bottom: 300px;
-      opacity: 0; /* Invisible */
+        bottom: 300px;
+        opacity: 0;
+        /* Invisible */
     }
+
     50% {
-      opacity: 1;
+        opacity: 1;
     }
+
     100% {
-      bottom: 900px; /* Stop at this position */
-      opacity: 1;
+        bottom: 900px;
+        /* Stop at this position */
+        opacity: 1;
     }
-  }
-  
+}
+
 .nurseryDescText h1 {
     font-size: 4.5em;
     margin-bottom: 20px;
@@ -652,6 +702,106 @@ body {
 .nurseryDescText p {
     font-size: 1.6em;
     margin-bottom: 30px;
+}
+
+/* Section Styles */
+.events-section {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.events-section h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+/* Container for the event cards */
+.event-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Event Card Styles */
+.event-card {
+    background-color: #f5f5dc;
+    color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card.animate {
+    animation: fadeInUp 1.5s ease-out forwards; /* Trigger fadeInUp animation */
+}
+
+/* Keyframes for Animation */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Event Image */
+.event-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Event Details */
+.event-card-details h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.event-card-details p {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-card {
+        width: 250px;
+        height: 250px;
+    }
+
+    .event-card-details h3 {
+        font-size: 1.2em;
+    }
+
+    .event-card-details p {
+        font-size: 0.9em;
+    }
 }
 
 /* Social Media Styles */
@@ -713,3 +863,6 @@ footer p {
     }
 }
 
+#userName {
+    font-size: 1.2em;
+}

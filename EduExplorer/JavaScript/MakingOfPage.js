@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const showRegistration = document.getElementById("showRegistration");
   const registrationForm = document.getElementById("registrationForm");
-  //const form = document.getElementById("registrationForm");
   const messageDiv = document.getElementById("message");
   const submitButton = registrationForm.querySelector('button[type="submit"]');
   const userNameElement = document.getElementById("userName");
@@ -11,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     registrationForm.style.display =
       registrationForm.style.display === "none" ? "block" : "none";
+    //Call checkFormValidity() here to initially disable the button if fields are empty.
+    checkFormValidity();
   });
 
   // Input field validation
@@ -66,19 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
     switch (id) {
       case "firstName":
       case "lastName":
-        if (value.length < 3) {
-          isValid = false;
-        }
+        isValid = value.length >= 3; 
         break;
       case "phoneNumber":
-        if (value.length !== 8 || !/^\d+$/.test(value)) {
-          isValid = false;
-        }
+        isValid = value.length === 8 && /^\d+$/.test(value); 
         break;
       case "email":
-        if (value === "" || !value.includes("@")) {
-          isValid = false;
-        }
+        isValid = value.includes("@"); 
         break;
     }
     return isValid;
@@ -97,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function displayUserName(firstName, lastName) {
   var userNameElement = document.getElementById("userName");
-  userNameElement.innerHTML = `Welcome, ${firstName} ${lastName}!`;
+  userNameElement.innerHTML =`Welcome, ${firstName} ${lastName}!`;
   userNameElement.style.display = "inline";
 }
 
@@ -120,7 +115,7 @@ function checkExistingUser() {
   const firstName = sessionStorage.getItem("firstName");
   const lastName = sessionStorage.getItem("lastName");
   if (firstName && lastName) {
-    handleRegistrationSuccess(firstName, lastName); // Reuse the function
+    handleRegistrationSuccess(firstName, lastName); 
   }
 }
 

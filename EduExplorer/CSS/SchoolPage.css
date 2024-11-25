@@ -19,7 +19,6 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
-    z-index: 9999; 
 }
 
 #background {
@@ -564,6 +563,9 @@ body {
     cursor: pointer;
 }
 
+#userName {
+    font-size: 1.2em;
+}
 /* General container styling */
 .container {
     display: flex;
@@ -653,6 +655,85 @@ body {
 .nurseryDescText p {
     font-size: 1.6em;
     margin-bottom: 30px;
+}
+/* Section Styles */
+.news-section {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.news-section h2 {
+    color: #2c3e50;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+/* Container for the news cards */
+.news-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+/* News Card Styles */
+.news-card {
+    background-color: #f5f5dc;
+    color: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    animation: slideFromRight 14s linear infinite; /* Continuous animation */
+}
+
+/* Keyframes for Smooth Slide from Right to Left */
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(550%); /* Start off-screen to the right */
+    }
+
+    100% {
+        transform: translateX(-550%); /* Loop back to the right */
+    }
+}
+
+/* News Card Content */
+.news-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    font-size: 1em;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-card {
+        width: 250px;
+    }
+
+    .news-card h3 {
+        font-size: 1.2em;
+    }
+
+    .news-card p {
+        font-size: 0.9em;
+    }
 }
 
 /* Social Media Styles */

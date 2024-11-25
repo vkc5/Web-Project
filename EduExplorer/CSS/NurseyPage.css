@@ -19,7 +19,6 @@ body {
     box-sizing: border-box;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
-    z-index: 9999; 
 }
 #background {
     background-image: url('../image/NurseryImages/nurseryimage.png'); /* Path to your background image */
@@ -207,7 +206,7 @@ body {
 .header h2 {
     font-size: 2em;
     color: #333;
-   /* font-style: italic;*/
+    font-family: 'Trajan Pro', sans-serif;
 }
 
 .filter-icon {
@@ -564,6 +563,7 @@ body {
 
 /* General container styling */
 .container {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -592,6 +592,10 @@ body {
 .counter.visible {
     opacity: 1; /* Make visible */
     transform: translateY(0); /* Slide up to its final position */
+}
+
+.container h1{
+    font-family: 'Trajan Pro', sans-serif;
 }
 
 /* Styling for the heading (question) in the counter box */
@@ -665,7 +669,8 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #0073e6;
+    color: #000;
+    font-family: 'Trajan Pro', sans-serif;
 }
 
 .faq-options {
@@ -809,3 +814,6 @@ footer p {
     }
 }
 
+#userName {
+    font-size: 1.2em;
+}

@@ -17,7 +17,6 @@ body {
     position: relative;
     backdrop-filter: blur(4px); /* Apply blur effect to the navbar background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to the navigation bar */
-    z-index: 9999; 
 }
 
 .logo {
@@ -201,7 +200,7 @@ body {
 }
 
 .hero-section p {
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin-bottom: 30px;
 }
 
@@ -263,4 +262,8 @@ body {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+}
+
+#userName {
+    font-size: 1.2em;
 }
