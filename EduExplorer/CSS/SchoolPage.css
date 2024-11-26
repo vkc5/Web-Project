@@ -36,7 +36,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
     min-height: calc(100vh -100px); /* Leaves space for the navbar */
+    font-family: serif;
 }
 
 .logo {
@@ -208,6 +210,7 @@ body {
 .header h2 {
     font-size: 2em;
     color: #333;
+    font-family: 'Trajan Pro', sans-serif;
    /* font-style: italic;*/
 }
 
@@ -284,7 +287,7 @@ body {
 #reset-filters {
     display: inline-block;
     padding: 6px 20px;
-    background-color: #444;
+    background-color: #da3f3f;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -292,7 +295,7 @@ body {
 }
 
 #reset-filters:hover {
-    background-color: #333;
+    background-color: #e00e0e;
 }
 
 .popup-modal {
@@ -566,8 +569,8 @@ body {
 #userName {
     font-size: 1.2em;
 }
-/* General container styling */
-.container {
+/* General container-counter styling */
+.container-counter {
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -575,6 +578,10 @@ body {
     background-color: #f1e9d79f; 
     flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
     margin-bottom: 15px;
+    font-family: serif;
+}
+.container-counter h1{
+    font-family:'Trajan Pro', sans-serif;
 }
 
 /* Styling for each counter box */
@@ -620,7 +627,7 @@ body {
     color: #0056b3; /* Darker blue on hover */
 }
 
-.nurseryDescText {
+.schoolDescText {
     text-align: left;
     color: #fff;
     padding: 30px;
@@ -647,14 +654,17 @@ body {
     }
   }
   
-.nurseryDescText h1 {
+.schoolDescText h1 {
     font-size: 4.5em;
     margin-bottom: 20px;
+    font-family: 'Trajan Pro', sans-serif;
 }
 
-.nurseryDescText p {
+.schoolDescText p {
     font-size: 1.6em;
     margin-bottom: 30px;
+    font-family: serif;
+    font-weight:bold;
 }
 /* Section Styles */
 .news-section {
@@ -673,6 +683,7 @@ body {
     margin: 0;
     padding: 20px;
     margin-top: 15px;
+    font-family: 'Trajan Pro', sans-serif;
 }
 
 /* Container for the news cards */
@@ -683,6 +694,7 @@ body {
     justify-content: center;
     width: 100%;
     position: relative;
+    font-family:serif;
 }
 
 /* News Card Styles */
@@ -796,4 +808,3 @@ footer p {
         font-size: 16px;
     }
 }
-
