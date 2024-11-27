@@ -1,5 +1,5 @@
 body {
-    background-color: #f1e9d79f;
+    background-color: #b0d0e9; 
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
@@ -33,6 +33,7 @@ body {
 }
 
 .School-section-container {
+    background-color:#fbf8e7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -410,7 +411,7 @@ body {
 }
 
 .School-item {
-    background-color: #ffffff16;
+    background-color: #f5f1e0 ;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -575,10 +576,11 @@ body {
     justify-content: center;
     align-items: center; 
     gap: 30px; 
-    background-color: #f1e9d79f; 
+    background-color: #b0d0e9; 
     flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
     margin-bottom: 15px;
     font-family: serif;
+    color:#2c3e50;
 }
 .container-counter h1{
     font-family:'Trajan Pro', sans-serif;
@@ -587,7 +589,7 @@ body {
 /* Styling for each counter box */
 .counter {
     text-align: center;
-    background-color: white;
+    background-color: #fdfbee;
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     padding: 20px; 
@@ -595,7 +597,6 @@ body {
     opacity: 0; /* Initially hidden */
     transform: translateY(50px); /* Start position off-screen */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition */
-    margin-bottom: 15px;
     margin-top: 15px;
 }
 
@@ -617,14 +618,14 @@ body {
 .counter .number {
     font-size: 2.5em;
     font-weight: bold;
-    color: #007bff; /* Blue color for the numbers */
+    color: #004a99; /* Blue color for the numbers */
     margin-bottom: 5px;
     transition: color 0.3s ease;
 }
 
 /* Change number color on hover */
 .counter:hover .number {
-    color: #0056b3; /* Darker blue on hover */
+    color: #DAA520; /* Darker blue on hover */
 }
 
 .schoolDescText {
@@ -668,6 +669,7 @@ body {
 }
 /* Section Styles */
 .news-section {
+    background-color: #b0d0e9; 
     width: 100%;
     text-align: center;
     position: relative;
@@ -675,7 +677,7 @@ body {
 }
 
 .news-section h2 {
-    color: #2c3e50;
+    color:#2c3e50;
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
@@ -699,7 +701,7 @@ body {
 
 /* News Card Styles */
 .news-card {
-    background-color: #dcdcdc;
+    background-color: #F2EEDD;
     color: #34495e;
     padding: 20px;
     border-radius: 10px;
@@ -754,7 +756,7 @@ body {
 .social-media {
     display: flex;
     justify-content: center;
-    background-color: #e9e9e9;
+    background-color: #b0d0e9; 
     padding: 10px;
     border-radius: 5px;
 }
@@ -774,13 +776,13 @@ body {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #f5f5dc ;
     margin-top: 40px;
     border-top: 1px solid #ddd;
 }
 
 footer p {
-    color: #9e8a6d;
+    color: #2c3e50  ;
     /* Beige tone for copyright text */
     font-size: 18px;
     /* Increased font size for copyright */

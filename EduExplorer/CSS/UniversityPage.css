@@ -444,7 +444,7 @@ body {
 }
 
 .college-item {
-    background-color: #ffffff16;
+    background-color: #F2EEDD ;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -669,7 +669,7 @@ body {
     /* Darker blue on hover */
 }
 
-.nurseryDescText {
+.collegeDescText {
     text-align: left;
     color: #fff;
     padding: 30px;
@@ -700,13 +700,13 @@ body {
     }
 }
 
-.nurseryDescText h1 {
+.collegeDescText h1 {
     font-size: 4.5em;
     margin-bottom: 20px;
     font-family: 'Trajan Pro', sans-serif;
 }
 
-.nurseryDescText p {
+.collegeDescText p {
     font-size: 1.6em;
     margin-bottom: 30px;
     font-family: serif;
